@@ -500,5 +500,125 @@
         "verdictHtml": "<b>My take</b> · Worth it as a <em>swap</em>, not an add-on — this weekend is already full. If Allie's curious about the college-town vibe, or Saturday's harbor-islands weather turns, trade the Georges Island ferry for this. Otherwise I'd keep the harbor; it's the soul of the trip."
       }
     ]
+  },
+  "essentials": {
+    "heading": "Essentials",
+    "lede": "Everything you'll reach for, in one place — works offline.",
+    "rows": [
+      {
+        "label": "Hotel",
+        "val": "Hyatt Place Seaport · 295 Northern Ave",
+        "acts": [
+          {
+            "t": "Call",
+            "href": "tel:+18573281234"
+          },
+          {
+            "t": "Map",
+            "href": "https://maps.apple.com/?q=Hyatt%20Place%20Boston%20Seaport%20District%20295%20Northern%20Ave"
+          },
+          {
+            "t": "Site ›",
+            "href": "https://www.hyatt.com/hyatt-place/en-US/boszs-hyatt-place-boston-seaport-district"
+          }
+        ]
+      },
+      {
+        "label": "Land",
+        "val": "UA641 · Fri 10:20 AM · Terminal B",
+        "acts": [
+          {
+            "t": "Status ›",
+            "href": "https://www.flightaware.com/live/flight/UAL641"
+          }
+        ]
+      },
+      {
+        "label": "Fly out",
+        "val": "UA2136 · Sun 7:24 PM · Terminal B",
+        "acts": [
+          {
+            "t": "Status ›",
+            "href": "https://www.flightaware.com/live/flight/UAL2136"
+          },
+          {
+            "t": "United ›",
+            "href": "https://www.united.com/"
+          }
+        ]
+      },
+      {
+        "label": "Water taxi",
+        "val": "Boston Harbor · on demand",
+        "acts": [
+          {
+            "t": "Call 617-406-8584",
+            "href": "tel:+16174068584"
+          },
+          {
+            "t": "App ›",
+            "href": "https://www.bostonwatertaxi.com/"
+          }
+        ]
+      },
+      {
+        "label": "Fri dinner",
+        "val": "Tony &amp; Elaine's · 6:45 PM",
+        "acts": [
+          {
+            "t": "Call",
+            "href": "tel:+16175800321"
+          },
+          {
+            "t": "Reserve ›",
+            "href": "https://www.tonyandelaines.com/reservations"
+          }
+        ]
+      },
+      {
+        "label": "Sat dinner",
+        "val": "Toro · 6:30 PM",
+        "acts": [
+          {
+            "t": "Call",
+            "href": "tel:+16175364300"
+          },
+          {
+            "t": "Reserve ›",
+            "href": "https://www.toro-restaurant.com/reservations"
+          }
+        ]
+      },
+      {
+        "label": "Duck Tour",
+        "val": "Sun 10:30 AM · Prudential",
+        "acts": [
+          {
+            "t": "Tickets ›",
+            "href": "https://bostonducktours.com/on-sale/"
+          }
+        ]
+      },
+      {
+        "label": "View Boston",
+        "val": "Sat ~8:00 PM · Prudential",
+        "acts": [
+          {
+            "t": "Tickets ›",
+            "href": "https://viewboston.com/buy-tickets/"
+          }
+        ]
+      },
+      {
+        "label": "Harbor ferry",
+        "val": "Sat afternoon · Georges Island",
+        "acts": [
+          {
+            "t": "Tickets ›",
+            "href": "https://www.bostonharborislands.org/ferry-tickets/"
+          }
+        ]
+      }
+    ]
   }
 }

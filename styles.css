@@ -251,6 +251,22 @@ a.act:hover{background:rgba(127,212,221,.15);border-color:#7FD4DD}
   text-transform:uppercase;color:var(--brass);
 }
 .verdict em{font-family:'Newsreader',serif;font-style:italic;color:var(--ink)}
+
+/* essentials panel: one-tap hotel / flights / reservations / bookings */
+.ess{list-style:none}
+.ess li{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px;
+  padding:11px 0;border-bottom:1px solid rgba(232,239,241,.14);
+}
+.ess li:last-child{border-bottom:0}
+.ess-label{
+  flex:0 0 88px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--brass);
+}
+.ess-val{flex:1 1 190px;min-width:0;font-size:14.5px;color:#E8EFF1}
+.ess-val b{color:#fff}
+.ess-acts{display:flex;flex-wrap:wrap;gap:6px;flex:0 0 auto}
+.ess-acts .act{margin-left:0}
 footer{
   margin-top:40px;text-align:center;font-family:'IBM Plex Mono',monospace;
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);

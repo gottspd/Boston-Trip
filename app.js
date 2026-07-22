@@ -160,6 +160,25 @@ function renderOptional(opt) {
 </section>`;
 }
 
+// Essentials: hotel, flights, water taxi, reservations & bookings — one tap each.
+function renderEssentials(e) {
+  if (!e || !e.rows || !e.rows.length) return '';
+  const rows = e.rows.map(r => {
+    const acts = (r.acts || []).map(a => {
+      const tel = String(a.href || '').startsWith('tel:');
+      return `<a class="act" href="${attr(a.href)}"${tel ? '' : ' target="_blank" rel="noopener"'}>${a.t}</a>`;
+    }).join('');
+    return `<li><span class="ess-label">${r.label}</span><span class="ess-val">${r.val}</span><span class="ess-acts">${acts}</span></li>`;
+  }).join('\n    ');
+  return `<div class="panel essentials">
+  <h2>${e.heading}</h2>
+  <p class="lede">${e.lede}</p>
+  <ul class="ess">
+    ${rows}
+  </ul>
+</div>`;
+}
+
 /* ---------- behaviour wiring ---------- */
 
 function activateDay(id) {
@@ -421,6 +440,7 @@ async function main() {
     ...trip.days.map((d, i) => renderDay(d, i, trip.base)),
     trip.optional ? renderOptional(trip.optional) : '',
     renderPanel(trip.checklist, 'todo'),
+    trip.essentials ? renderEssentials(trip.essentials) : '',
     trip.packing ? renderPanel(trip.packing, 'packlist') : '',
     trip.photos ? renderPanel(trip.photos, 'photolist') : '',
     `<footer>${trip.footer}</footer>`
