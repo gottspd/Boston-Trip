@@ -177,6 +177,14 @@ a.mappin{
   padding:2px 9px;white-space:nowrap;
 }
 a.mappin:hover{background:var(--ferry);color:#fff}
+
+/* inline location / flight links inside prose */
+a.loc{color:var(--ferry);text-decoration:none;border-bottom:1px solid rgba(29,122,133,.45)}
+a.loc:hover{border-bottom-color:var(--ferry);background:rgba(29,122,133,.09)}
+.card p a.loc b, .swap a.loc b, a.loc b{color:var(--ferry)}
+.panel a.loc{color:#7FD4DD;border-bottom-color:rgba(127,212,221,.45)}
+.panel a.loc:hover{background:rgba(127,212,221,.12);border-bottom-color:#7FD4DD}
+.panel a.loc b{color:#7FD4DD}
 footer{
   margin-top:40px;text-align:center;font-family:'IBM Plex Mono',monospace;
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
