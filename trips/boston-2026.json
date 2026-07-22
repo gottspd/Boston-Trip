@@ -1,0 +1,267 @@
+{
+  "slug": "boston-2026",
+  "title": "Boston, Plotted | Michael and Allie",
+  "appName": "Boston, Plotted",
+  "appShortName": "Boston",
+  "storageKey": "boston-trip-todo",
+  "themeColor": "#16303C",
+  "backgroundColor": "#E7EEF0",
+  "weather": {
+    "latitude": 42.353,
+    "longitude": -71.044,
+    "timezone": "America/New_York"
+  },
+  "header": {
+    "eyebrow": "Plotted course · Fri Jul 24 to Sun Jul 26, 2026",
+    "titleHtml": "Boston, with <em>Allie</em>",
+    "sub": "A daddy daughter weekend on foot and on the water. Home port: Hyatt Place Seaport District. No car, no museums, no Fenway. Just the harbor, the neighborhoods, and the food.",
+    "facts": [
+      { "html": "Land <b>10:20 AM</b> Fri · UA641 · Term B ↗", "href": "https://www.flightaware.com/live/flight/UAL641" },
+      { "html": "Fly out <b>7:24 PM</b> Sun · UA2136 · Term B ↗", "href": "https://www.flightaware.com/live/flight/UAL2136" },
+      { "html": "Base: <b>295 Northern Ave</b>, Seaport" },
+      { "html": "Everything by <b>foot, ferry, or T</b>" }
+    ]
+  },
+  "days": [
+    {
+      "id": "fri",
+      "tab": { "label": "Friday", "subHtml": "Harbor + North End" },
+      "heading": "Day 1 · Friday, July 24",
+      "course": "Arrive by air, enter by sea. Seaport, the Greenway, and dinner in the North End.",
+      "date": "2026-07-24",
+      "legs": [
+        {
+          "time": "10:20",
+          "meal": false,
+          "titleHtml": "Land at Logan, cross the harbor by water taxi",
+          "badge": { "text": "Signature move" },
+          "bodyHtml": "Step by step: <b>(1)</b> UA641 lands at <b>Terminal B</b>; follow signs to Arrivals, Level 1, for baggage claim. <b>(2)</b> Walk out to the arrivals curb and board the free <b>Route 66 shuttle</b>; it loops every terminal and ends at the Logan Boat Dock, 5 to 10 minutes. <b>(3)</b> At the dock, call or app-summon an on-demand water taxi (signage at the dock has the operators; boats usually arrive within 10 to 15 minutes, about $20 per person). <b>(4)</b> Tell the captain <b>Fan Pier</b>. Ten minutes across the harbor, skyline the whole way. <b>(5)</b> From the Fan Pier dock, walk 6 minutes: away from the water to Northern Ave, turn left, Hyatt Place is at 295.",
+          "chips": [ { "type": "taxi", "label": "Shuttle + water taxi + walk · about 40 min door to door" } ],
+          "tipHtml": "This is the trip's opening shot. Allie's first view of Boston should be from the water.",
+          "swap": { "label": "Bad weather backup", "bodyHtml": "Silver Line SL1 bus, curbside at every terminal's arrivals level, free heading into the city, every 10 min. Ride it through the harbor tunnel to the first stop, <b>Silver Line Way</b>, then walk 5 min to the hotel." }
+        },
+        {
+          "time": "11:15",
+          "titleHtml": "Drop bags at Hyatt Place Seaport",
+          "bodyHtml": "Room likely won't be ready. They'll hold luggage. Change into walking shoes; you'll log 15k steps today without trying.",
+          "map": "Hyatt Place Boston Seaport District"
+        },
+        {
+          "time": "12:00",
+          "meal": true,
+          "titleHtml": "Lunch: The Barking Crab",
+          "badge": { "text": "Meal" },
+          "bodyHtml": "Bill Barrett's pick, and it's a five minute walk on Fort Point Channel. Picnic tables under the tent, crab legs, lobster roll, and the chowdah Song ordered you to get. Loud, casual, very Boston.",
+          "chips": [ { "type": "walk", "label": "Walk · 5 min from hotel" } ],
+          "swap": { "label": "Swap", "bodyHtml": "James Hook &amp; Co next door for a faster counter service lobster roll if the Crab has a wait." },
+          "map": "Barking Crab 88 Sleeper St Boston"
+        },
+        {
+          "time": "1:15",
+          "titleHtml": "Harborwalk into downtown",
+          "bodyHtml": "Cross the Seaport Boulevard bridge and follow the Harborwalk north along the water past the aquarium to <b>Long Wharf</b>. Jeff Behrens is right: the harbor is the show. Great photo stops the whole way.",
+          "chips": [ { "type": "walk", "label": "Walk · 25 min, all waterfront" } ]
+        },
+        {
+          "time": "2:00",
+          "titleHtml": "Faneuil Hall + Quincy Market, quick pass",
+          "bodyHtml": "Todd's pick. Street performers, the long market hall, grab a drink. It's touristy, so treat it as a 45 minute walk-through, not a destination.",
+          "map": "Quincy Market Boston"
+        },
+        {
+          "time": "3:00",
+          "titleHtml": "Rose Kennedy Greenway to the North End",
+          "bodyHtml": "Wander the Greenway's gardens and public art north, then dive into the North End's narrow streets. Hanover and Salem Streets are the spine; the side streets are the charm. This is the original Boston, now the Italian quarter.",
+          "chips": [ { "type": "walk", "label": "Walk · 10 min on the Greenway" } ],
+          "tipHtml": "Mid afternoon move: cannoli at Modern Pastry on Hanover. Megan says Modern over Mike's, and she's correct. Cash speeds up the line.",
+          "map": "Modern Pastry 257 Hanover St Boston"
+        },
+        {
+          "time": "4:30",
+          "titleHtml": "Reset at the hotel",
+          "bodyHtml": "Check in for real, shower, put your feet up for an hour. Water taxi or a 20 minute walk back.",
+          "chips": [
+            { "type": "walk", "label": "Walk · 20 min" },
+            { "type": "taxi", "label": "Or water taxi from Long Wharf" }
+          ]
+        },
+        {
+          "time": "6:45",
+          "meal": true,
+          "titleHtml": "Dinner: Tony &amp; Elaine's, North End",
+          "badge": { "text": "Reserve now", "res": true },
+          "bodyHtml": "Megan's pick: red sauce Italian with a fun, slightly retro energy, and the outdoor tables she specifically flagged. Chicken parm and a Shirley Temple for the almost 21 year old.",
+          "chips": [ { "type": "walk", "label": "Walk or rideshare · 20 min / 8 min" } ],
+          "swap": { "label": "Swap", "bodyHtml": "Massiminos on Endicott St, Rob Weinhold's pick, quieter and old school. Beth seconded it hard." },
+          "map": "Tony and Elaine's 111 N Washington St Boston"
+        },
+        {
+          "time": "8:30",
+          "titleHtml": "Evening stroll: Christopher Columbus Park + waterfront lights",
+          "bodyHtml": "Walk off dinner under the trellis at the waterfront park, then follow the lit Harborwalk home. If you two still have gas, the adirondack swings at <b>The Lawn on D</b> near the hotel glow at night and are exactly the kind of silly that ends a first day well.",
+          "chips": [ { "type": "walk", "label": "Walk · 25 min back to Seaport" } ],
+          "map": "Christopher Columbus Waterfront Park Boston"
+        }
+      ]
+    },
+    {
+      "id": "sat",
+      "tab": { "label": "Saturday", "subHtml": "Her day + the water" },
+      "heading": "Day 2 · Saturday, July 25",
+      "course": "Beacon Hill and Back Bay for her, the harbor islands for both of you, tapas and a skyline to finish.",
+      "date": "2026-07-25",
+      "legs": [
+        {
+          "time": "8:45",
+          "meal": true,
+          "titleHtml": "Breakfast: Tatte, Beacon Hill",
+          "badge": { "text": "Meal" },
+          "bodyHtml": "Ride the T into town and start with shakshuka and a halva latte at the Charles Street Tatte. It puts you at the foot of Beacon Hill as the neighborhood wakes up.",
+          "chips": [
+            { "type": "sl", "label": "SL1/SL2 · Silver Line Way to South Station" },
+            { "type": "red", "label": "Red Line · South Station to Charles/MGH" }
+          ],
+          "map": "Tatte Bakery Charles Street Boston"
+        },
+        {
+          "time": "9:45",
+          "titleHtml": "Beacon Hill wander + Acorn Street",
+          "bodyHtml": "Gas lamps, brick sidewalks, hidden gardens. Hit <b>Acorn Street</b> early before the crowds; it's the most photographed street in America and Allie will want the shot. Beth called this one, and Jeffrey O'Neill seconded the neighborhood.",
+          "chips": [ { "type": "walk", "label": "Walk · the hill is the activity" } ],
+          "map": "Acorn Street Boston"
+        },
+        {
+          "time": "10:45",
+          "titleHtml": "Public Garden + swan boats",
+          "bodyHtml": "Cross Charles Street into the Public Garden. The swan boats are $5, run since 1877, and are gloriously unhurried. Make Way for Ducklings statues on the way out.",
+          "map": "Boston Public Garden"
+        },
+        {
+          "time": "11:30",
+          "titleHtml": "Newbury Street: her hours",
+          "badge": { "text": "Allie's pick" },
+          "bodyHtml": "Sharon's daughter was obsessed with Back Bay and yours will be too. Eight blocks of shops from Arlington to Mass Ave. Your job is to carry bags and say yes. Beth warned you this won't be your favorite part of the trip; that's how you know it's working.",
+          "chips": [ { "type": "walk", "label": "Walk · Newbury runs parallel to the Garden" } ],
+          "tipHtml": "Two minute detour at Copley: step into the Boston Public Library courtyard. It's free, it's stunning, and it's a library, not a museum, so it doesn't break your rules.",
+          "map": "Newbury Street Boston"
+        },
+        {
+          "time": "1:00",
+          "meal": true,
+          "titleHtml": "Lunch on Newbury",
+          "badge": { "text": "Meal" },
+          "bodyHtml": "Keep it easy and outdoors: <b>Stephanie's on Newbury</b> for classic patio people watching, or <b>Faccia a Faccia</b> if you want a chicer room. Wherever she points.",
+          "map": "Stephanie's on Newbury Boston"
+        },
+        {
+          "time": "2:30",
+          "titleHtml": "Ferry to Georges Island, Boston Harbor Islands",
+          "badge": { "text": "Book ferry", "res": true },
+          "bodyHtml": "Robert Nagle's advice, taken: the harbor over the Freedom Trail. T back to Long Wharf and catch the harbor islands ferry out to Georges Island. Explore <b>Fort Warren</b>, a Civil War era granite fort with dark tunnels, ramparts, and skyline views back to the city. It reads as adventure, not history homework.",
+          "chips": [
+            { "type": "red", "label": "Red + walk · Charles/MGH to Long Wharf area" },
+            { "type": "ferry", "label": "Harbor Islands ferry · 30 min crossing" }
+          ],
+          "tipHtml": "Check the return schedule when you land on the island. Aim for a boat back around 5:00 to 5:30.",
+          "swap": { "label": "Swap", "bodyHtml": "A 2 to 3 hour afternoon whale watch from Long Wharf if you'd both rather chase humpbacks than forts. Books out on summer Saturdays, so decide by Thursday." },
+          "map": "Long Wharf Boston"
+        },
+        {
+          "time": "6:30",
+          "meal": true,
+          "titleHtml": "Dinner: Barcelona Wine Bar, South End",
+          "badge": { "text": "Reserve now", "res": true },
+          "bodyHtml": "Matt Kelleher's tapas call. Order in waves: patatas bravas, gambas al ajillo, the char grilled steak skewers. The South End is where Boston actually eats; the whole neighborhood backs him up.",
+          "chips": [ { "type": "walk", "label": "Rideshare · 10 min from Seaport, or Long Wharf" } ],
+          "map": "Barcelona Wine Bar 525 Tremont St Boston"
+        },
+        {
+          "time": "8:15",
+          "titleHtml": "Sunset at View Boston",
+          "badge": { "text": "Timed tickets", "res": true },
+          "bodyHtml": "Lien's bonus rec, deployed at the right hour. Walk 15 minutes from the South End to the Prudential Tower and ride to the 52nd floor for sunset over the whole city, harbor to the Charles. Sunset is about 8:10; book the 8:00 window and stay for the lights coming up.",
+          "chips": [ { "type": "walk", "label": "Walk · 15 min through the South End" } ],
+          "tipHtml": "On the walk over, cut past the Christian Science Plaza reflecting pool. At dusk it mirrors the whole skyline.",
+          "map": "View Boston 800 Boylston St"
+        }
+      ]
+    },
+    {
+      "id": "sun",
+      "tab": { "label": "Sunday", "subHtml": "Ducks + wheels up" },
+      "heading": "Day 3 · Sunday, July 26",
+      "course": "Quack loudly, dim sum, one last lap of the harbor, then an unhurried run at Logan.",
+      "date": "2026-07-26",
+      "legs": [
+        {
+          "time": "8:30",
+          "meal": true,
+          "titleHtml": "Breakfast: Flour Bakery, Fort Point",
+          "badge": { "text": "Meal" },
+          "bodyHtml": "Joanne Chang's original. The sticky bun is famous for a reason; split one alongside real breakfast. Seven minute walk from the hotel, and you can check flight status over coffee.",
+          "chips": [ { "type": "walk", "label": "Walk · 7 min" } ],
+          "map": "Flour Bakery 12 Farnsworth St Boston"
+        },
+        {
+          "time": "10:30",
+          "titleHtml": "Boston Duck Tour",
+          "badge": { "text": "Booked · 10:30", "res": true },
+          "bodyHtml": "The single most repeated recommendation you got, from Jeffrey, Megan, and Adrian. It's a loop: departs from and returns to the <b>Prudential Center (Huntington Ave side)</b>, about 80 minutes through the city in a WWII style amphibious vehicle, including the moment it drives straight into the Charles River. Pure fun, zero museum content, and the conDUCKtor will absolutely make Allie quack at strangers. Back at the Pru just before noon.",
+          "chips": [ { "type": "walk", "label": "Rideshare · 10 min to Prudential, arrive 10:10" } ],
+          "tipHtml": "Ask to sit near the front for the river entry splash.",
+          "map": "Boston Duck Tours Prudential Center"
+        },
+        {
+          "time": "12:15",
+          "meal": true,
+          "titleHtml": "Lunch: Sunday dim sum in Chinatown",
+          "badge": { "text": "Meal" },
+          "bodyHtml": "Vaibhav vouched for Chinatown, and Sunday is its best day. Fifteen minute walk from the Duck Tour drop-off. <b>China Pearl</b> for classic rolling cart dim sum, pointing at whatever looks good, or <b>Gourmet Dumpling House</b> for soup dumplings. Bubble tea on the way out is mandatory for the 20 year old.",
+          "chips": [ { "type": "walk", "label": "Walk · 15 min from Prudential" } ],
+          "map": "China Pearl 9 Tyler St Boston"
+        },
+        {
+          "time": "1:30",
+          "titleHtml": "Greenway back, with an optional final cannoli",
+          "bodyHtml": "Exit through the Chinatown Gate onto the Rose Kennedy Greenway and stroll it north one last time: fountains, carousel, public art. If Friday's Modern Pastry run left a mark, the North End is ten minutes further for a boxed half dozen to fly home with.",
+          "chips": [ { "type": "walk", "label": "Walk · 20 min, all Greenway" } ],
+          "map": "Rose Kennedy Greenway Boston"
+        },
+        {
+          "time": "2:45",
+          "titleHtml": "Last hour on the harbor",
+          "bodyHtml": "Back to the Seaport for a slow lap of the Harborwalk at Fan Pier, the adirondack swings at The Lawn on D, or just a coffee facing the water. This is the deliberately empty block; whatever the weekend still owes you, collect it here.",
+          "chips": [ { "type": "walk", "label": "Walk · 20 min from North End, 25 from Chinatown" } ],
+          "map": "Fan Pier Park Boston"
+        },
+        {
+          "time": "3:45",
+          "titleHtml": "Collect bags at the hotel",
+          "bodyHtml": "Grab luggage from the bell desk, water bottles filled, boarding passes on your phones."
+        },
+        {
+          "time": "4:15",
+          "titleHtml": "Cross back to Logan the way you came",
+          "badge": { "text": "Buffer built in" },
+          "bodyHtml": "Reverse Friday: <b>(1)</b> 4:15, walk 6 minutes from the hotel to the Fan Pier dock; call the water taxi 15 minutes ahead so the boat is waiting. <b>(2)</b> Ten minute crossing to the <b>Logan Boat Dock</b>. <b>(3)</b> Board the free Route 66 shuttle at the dock and hop off at the <b>Terminal B</b> sign; United check-in is on the departures level, Level 2. <b>(4)</b> You're at check-in around 4:50, a full 2.5 hours before UA2136's 7:24 departure. Since Logan is new territory, that's real cushion for finding bag drop and security, with time left for a relaxed airside dinner.",
+          "chips": [ { "type": "taxi", "label": "Walk + water taxi + shuttle · about 35 min door to terminal" } ],
+          "swap": { "label": "Backup", "bodyHtml": "SL1 from Silver Line Way runs direct to every terminal, about 25 min. Fares run one way here: free coming from Logan, standard $2.40 fare going to it. Tap a contactless card or phone when boarding." }
+        }
+      ]
+    }
+  ],
+  "checklist": {
+    "heading": "Before you fly",
+    "lede": "Six bookings, in the order they'll sell out. Tap to check off.",
+    "items": [
+      "<b>Duck Tour, Sunday 10:30 AM</b> · Prudential departure, 2 seats. Grab it before it goes too.",
+      "<b>View Boston, Saturday ~8:00 PM</b> · timed sunset tickets for 2.",
+      "<b>Barcelona Wine Bar South End, Saturday 6:30 PM</b> · table for 2.",
+      "<b>Tony &amp; Elaine's, Friday 6:45 PM</b> · ask for outdoor seating.",
+      "<b>Harbor Islands ferry, Saturday afternoon</b> · round trip to Georges Island, or swap to a whale watch and book that instead.",
+      "<b>Save the water taxi number</b> · Boston Harbor water taxis run on demand; have the app or number ready when you land."
+    ],
+    "notes": "<b>Good to know:</b> Late July runs warm and humid; the harbor legs are the built in air conditioning. Allie is 20, so this plan keeps everything all ages: restaurants yes, bars no, which is why Tall Ship Boston didn't make the cut. Sunday is padded on purpose: at Logan by ~4:50 for a 7:24 flight, since it's your first time in that airport. Checkout is likely noon, so drop bags with the bell desk Sunday morning before the Duck Tour. Everything here is walk, boat, or one T ride, exactly as ordered."
+  },
+  "footer": "Course plotted for M + A · Compiled from the Long Angle and Facebook fleet"
+}
