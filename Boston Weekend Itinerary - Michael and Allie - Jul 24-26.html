@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boston, Plotted | Michael and Allie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,500&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --chart:#E7EEF0;
+    --chart-deep:#D8E4E7;
+    --ink:#16303C;
+    --ink-soft:#3E5A66;
+    --buoy:#C6452C;
+    --brass:#96763A;
+    --card:#FBFAF6;
+    --line:#9FB4BA;
+    --sl:#7C878E;
+    --red:#DA291C;
+    --ferry:#1D7A85;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--chart);
+    color:var(--ink);
+    font-family:'Archivo',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    background-image:
+      radial-gradient(circle at 85% 12%, rgba(255,255,255,.55), transparent 42%),
+      repeating-linear-gradient(0deg, transparent 0 46px, rgba(22,48,60,.045) 46px 47px),
+      repeating-linear-gradient(90deg, transparent 0 46px, rgba(22,48,60,.045) 46px 47px);
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 90px}
+
+  /* ---------- Header ---------- */
+  header{padding:44px 0 10px;position:relative}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--brass);display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+  h1{
+    font-family:'Newsreader',serif;font-weight:600;font-size:clamp(40px,7vw,64px);
+    line-height:1.02;letter-spacing:-.01em;margin:14px 0 6px;
+  }
+  h1 em{font-style:italic;font-weight:400;color:var(--buoy)}
+  .sub{
+    font-family:'Newsreader',serif;font-style:italic;font-size:19px;color:var(--ink-soft);
+    max-width:560px;margin-top:6px;
+  }
+  .facts{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;
+  }
+  .fact{
+    background:var(--card);border:1px solid var(--line);border-radius:3px;
+    padding:8px 13px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink);
+  }
+  .fact b{color:var(--buoy);font-weight:600}
+
+  /* ---------- Day tabs ---------- */
+  nav{
+    position:sticky;top:0;z-index:40;background:var(--chart);
+    padding:14px 0 12px;margin-top:26px;
+    border-bottom:2px solid var(--ink);
+    display:flex;gap:8px;align-items:flex-end;
+  }
+  .tab{
+    appearance:none;border:1px solid var(--ink);background:var(--card);color:var(--ink);
+    font-family:'Archivo',sans-serif;font-weight:600;font-size:14px;letter-spacing:.02em;
+    padding:9px 16px 8px;border-radius:3px 3px 0 0;cursor:pointer;
+    display:flex;flex-direction:column;align-items:flex-start;gap:1px;line-height:1.15;
+    transition:background .15s,color .15s;
+  }
+  .tab small{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:10.5px;color:var(--ink-soft);letter-spacing:.06em}
+  .tab.active{background:var(--ink);color:var(--card)}
+  .tab.active small{color:#B9CBD2}
+  .tab:focus-visible{outline:3px solid var(--buoy);outline-offset:2px}
+
+  /* ---------- Day sections ---------- */
+  .day{display:none;padding-top:34px}
+  .day.show{display:block;animation:rise .35s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){.day.show{animation:none}}
+  .dayhead{margin-bottom:8px}
+  .dayhead h2{
+    font-family:'Newsreader',serif;font-weight:600;font-size:clamp(26px,4.5vw,34px);letter-spacing:-.01em;
+  }
+  .dayhead .course{
+    font-family:'Newsreader',serif;font-style:italic;font-size:17px;color:var(--ink-soft);
+  }
+
+  /* ---------- Timeline: plotted course ---------- */
+  .course-line{position:relative;margin-top:26px}
+  .course-line::before{
+    content:"";position:absolute;left:96px;top:8px;bottom:8px;width:0;
+    border-left:2px dashed var(--buoy);opacity:.55;
+  }
+  .leg{
+    position:relative;display:grid;grid-template-columns:78px 40px 1fr;gap:0;
+    margin-bottom:26px;
+  }
+  .leg .time{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:var(--ink);
+    padding-top:14px;text-align:right;letter-spacing:.02em;
+  }
+  .leg .dot{position:relative}
+  .leg .dot::before{
+    content:"";position:absolute;left:14px;top:18px;width:11px;height:11px;border-radius:50%;
+    background:var(--card);border:2.5px solid var(--buoy);z-index:2;
+  }
+  .leg.meal .dot::before{background:var(--buoy)}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:4px;
+    padding:16px 18px 15px;box-shadow:0 1px 0 rgba(22,48,60,.08);
+  }
+  .card h3{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:.005em;
+    display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  }
+  .badge{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--card);background:var(--brass);
+    padding:2.5px 7px;border-radius:2px;
+  }
+  .badge.res{background:var(--buoy)}
+  .card p{font-size:14.5px;color:var(--ink-soft);margin-top:6px}
+  .card p b{color:var(--ink);font-weight:600}
+  .tip{
+    margin-top:9px;font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:var(--brass);
+  }
+  .swap{
+    margin-top:10px;border-top:1px dashed var(--line);padding-top:9px;
+    font-size:13.5px;color:var(--ink-soft);
+  }
+  .swap b{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:600}
+
+  /* transit chips */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:500;
+    border:1px solid var(--line);border-radius:20px;padding:3.5px 11px;background:#fff;color:var(--ink);
+  }
+  .chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink-soft)}
+  .chip.walk::before{background:var(--ink);outline:2px solid #fff;outline-offset:-4px}
+  .chip.sl::before{background:var(--sl)}
+  .chip.red::before{background:var(--red)}
+  .chip.ferry::before{background:var(--ferry)}
+  .chip.taxi::before{background:var(--brass)}
+
+  /* ---------- Bottom panels ---------- */
+  .panel{
+    background:var(--ink);color:#E8EFF1;border-radius:5px;
+    padding:26px 26px 22px;margin-top:46px;
+  }
+  .panel h2{
+    font-family:'Newsreader',serif;font-weight:600;font-size:24px;color:#fff;margin-bottom:4px;
+  }
+  .panel .lede{font-family:'Newsreader',serif;font-style:italic;color:#AFC5CC;font-size:15.5px;margin-bottom:16px}
+  .todo{list-style:none}
+  .todo li{
+    display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(232,239,241,.14);
+    font-size:14.5px;cursor:pointer;
+  }
+  .todo li:last-child{border-bottom:0}
+  .todo .box{
+    flex:none;width:17px;height:17px;margin-top:2px;border:2px solid var(--brass);border-radius:2px;
+    display:grid;place-items:center;font-size:11px;color:var(--chart);
+  }
+  .todo li.done .box{background:var(--brass)}
+  .todo li.done .box::after{content:"✓"}
+  .todo li.done span{opacity:.5;text-decoration:line-through}
+  .todo b{color:#fff}
+  .notes{margin-top:14px;font-size:13.5px;color:#AFC5CC}
+  .notes b{color:#fff}
+
+  a.flink{text-decoration:none;display:inline-block}
+  a.flink:hover{border-color:var(--buoy)}
+  .wx{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ferry);margin-top:5px;letter-spacing:.03em;min-height:1em}
+  a.mappin{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;
+    color:var(--ferry);text-decoration:none;border:1px solid var(--ferry);border-radius:20px;
+    padding:2px 9px;white-space:nowrap;
+  }
+  a.mappin:hover{background:var(--ferry);color:#fff}
+  footer{
+    margin-top:40px;text-align:center;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  }
+
+  @media (max-width:620px){
+    .leg{grid-template-columns:58px 30px 1fr}
+    .course-line::before{left:66px}
+    .leg .dot::before{left:9px}
+    .leg .time{font-size:11.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Plotted course · Fri Jul 24 to Sun Jul 26, 2026</div>
+  <h1>Boston, with <em>Allie</em></h1>
+  <p class="sub">A daddy daughter weekend on foot and on the water. Home port: Hyatt Place Seaport District. No car, no museums, no Fenway. Just the harbor, the neighborhoods, and the food.</p>
+  <div class="facts">
+    <a class="fact flink" href="https://www.flightaware.com/live/flight/UAL641" target="_blank" rel="noopener">Land <b>10:20 AM</b> Fri · UA641 · Term B ↗</a>
+    <a class="fact flink" href="https://www.flightaware.com/live/flight/UAL2136" target="_blank" rel="noopener">Fly out <b>7:24 PM</b> Sun · UA2136 · Term B ↗</a>
+    <div class="fact">Base: <b>295 Northern Ave</b>, Seaport</div>
+    <div class="fact">Everything by <b>foot, ferry, or T</b></div>
+  </div>
+</header>
+
+<nav aria-label="Days">
+  <button class="tab active" data-day="fri">Friday <small>Harbor + North End</small></button>
+  <button class="tab" data-day="sat">Saturday <small>Her day + the water</small></button>
+  <button class="tab" data-day="sun">Sunday <small>Ducks + wheels up</small></button>
+</nav>
+
+<!-- ================= FRIDAY ================= -->
+<section class="day show" id="fri">
+  <div class="dayhead">
+    <h2>Day 1 · Friday, July 24</h2>
+    <p class="course">Arrive by air, enter by sea. Seaport, the Greenway, and dinner in the North End.</p>
+    <p class="wx" data-date="2026-07-24"></p>
+  </div>
+  <div class="course-line">
+
+    <div class="leg">
+      <div class="time">10:20</div><div class="dot"></div>
+      <div class="card">
+        <h3>Land at Logan, cross the harbor by water taxi <span class="badge">Signature move</span></h3>
+        <p>Step by step: <b>(1)</b> UA641 lands at <b>Terminal B</b>; follow signs to Arrivals, Level 1, for baggage claim. <b>(2)</b> Walk out to the arrivals curb and board the free <b>Route 66 shuttle</b>; it loops every terminal and ends at the Logan Boat Dock, 5 to 10 minutes. <b>(3)</b> At the dock, call or app-summon an on-demand water taxi (signage at the dock has the operators; boats usually arrive within 10 to 15 minutes, about $20 per person). <b>(4)</b> Tell the captain <b>Fan Pier</b>. Ten minutes across the harbor, skyline the whole way. <b>(5)</b> From the Fan Pier dock, walk 6 minutes: away from the water to Northern Ave, turn left, Hyatt Place is at 295.</p>
+        <div class="chips"><span class="chip taxi">Shuttle + water taxi + walk · about 40 min door to door</span></div>
+        <p class="tip">This is the trip's opening shot. Allie's first view of Boston should be from the water.</p>
+        <div class="swap"><b>Bad weather backup</b> · Silver Line SL1 bus, curbside at every terminal's arrivals level, free heading into the city, every 10 min. Ride it through the harbor tunnel to the first stop, <b>Silver Line Way</b>, then walk 5 min to the hotel.</div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">11:15</div><div class="dot"></div>
+      <div class="card">
+        <h3>Drop bags at Hyatt Place Seaport</h3>
+        <p>Room likely won't be ready. They'll hold luggage. Change into walking shoes; you'll log 15k steps today without trying.</p>
+      </div>
+    </div>
+
+    <div class="leg meal">
+      <div class="time">12:00</div><div class="dot"></div>
+      <div class="card">
+        <h3>Lunch: The Barking Crab <span class="badge">Meal</span></h3>
+        <p>Bill Barrett's pick, and it's a five minute walk on Fort Point Channel. Picnic tables under the tent, crab legs, lobster roll, and the chowdah Song ordered you to get. Loud, casual, very Boston.</p>
+        <div class="chips"><span class="chip walk">Walk · 5 min from hotel</span></div>
+        <div class="swap"><b>Swap</b> · James Hook &amp; Co next door for a faster counter service lobster roll if the Crab has a wait.</div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">1:15</div><div class="dot"></div>
+      <div class="card">
+        <h3>Harborwalk into downtown</h3>
+        <p>Cross the Seaport Boulevard bridge and follow the Harborwalk north along the water past the aquarium to <b>Long Wharf</b>. Jeff Behrens is right: the harbor is the show. Great photo stops the whole way.</p>
+        <div class="chips"><span class="chip walk">Walk · 25 min, all waterfront</span></div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">2:00</div><div class="dot"></div>
+      <div class="card">
+        <h3>Faneuil Hall + Quincy Market, quick pass</h3>
+        <p>Todd's pick. Street performers, the long market hall, grab a drink. It's touristy, so treat it as a 45 minute walk-through, not a destination.</p>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">3:00</div><div class="dot"></div>
+      <div class="card">
+        <h3>Rose Kennedy Greenway to the North End</h3>
+        <p>Wander the Greenway's gardens and public art north, then dive into the North End's narrow streets. Hanover and Salem Streets are the spine; the side streets are the charm. This is the original Boston, now the Italian quarter.</p>
+        <div class="chips"><span class="chip walk">Walk · 10 min on the Greenway</span></div>
+        <p class="tip">Mid afternoon move: cannoli at Modern Pastry on Hanover. Megan says Modern over Mike's, and she's correct. Cash speeds up the line.</p>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">4:30</div><div class="dot"></div>
+      <div class="card">
+        <h3>Reset at the hotel</h3>
+        <p>Check in for real, shower, put your feet up for an hour. Water taxi or a 20 minute walk back.</p>
+        <div class="chips"><span class="chip walk">Walk · 20 min</span><span class="chip taxi">Or water taxi from Long Wharf</span></div>
+      </div>
+    </div>
+
+    <div class="leg meal">
+      <div class="time">6:45</div><div class="dot"></div>
+      <div class="card">
+        <h3>Dinner: Tony &amp; Elaine's, North End <span class="badge res">Reserve now</span></h3>
+        <p>Megan's pick: red sauce Italian with a fun, slightly retro energy, and the outdoor tables she specifically flagged. Chicken parm and a Shirley Temple for the almost 21 year old.</p>
+        <div class="chips"><span class="chip walk">Walk or rideshare · 20 min / 8 min</span></div>
+        <div class="swap"><b>Swap</b> · Massiminos on Endicott St, Rob Weinhold's pick, quieter and old school. Beth seconded it hard.</div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">8:30</div><div class="dot"></div>
+      <div class="card">
+        <h3>Evening stroll: Christopher Columbus Park + waterfront lights</h3>
+        <p>Walk off dinner under the trellis at the waterfront park, then follow the lit Harborwalk home. If you two still have gas, the adirondack swings at <b>The Lawn on D</b> near the hotel glow at night and are exactly the kind of silly that ends a first day well.</p>
+        <div class="chips"><span class="chip walk">Walk · 25 min back to Seaport</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SATURDAY ================= -->
+<section class="day" id="sat">
+  <div class="dayhead">
+    <h2>Day 2 · Saturday, July 25</h2>
+    <p class="course">Beacon Hill and Back Bay for her, the harbor islands for both of you, tapas and a skyline to finish.</p>
+    <p class="wx" data-date="2026-07-25"></p>
+  </div>
+  <div class="course-line">
+
+    <div class="leg meal">
+      <div class="time">8:45</div><div class="dot"></div>
+      <div class="card">
+        <h3>Breakfast: Tatte, Beacon Hill <span class="badge">Meal</span></h3>
+        <p>Ride the T into town and start with shakshuka and a halva latte at the Charles Street Tatte. It puts you at the foot of Beacon Hill as the neighborhood wakes up.</p>
+        <div class="chips"><span class="chip sl">SL1/SL2 · Silver Line Way to South Station</span><span class="chip red">Red Line · South Station to Charles/MGH</span></div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">9:45</div><div class="dot"></div>
+      <div class="card">
+        <h3>Beacon Hill wander + Acorn Street</h3>
+        <p>Gas lamps, brick sidewalks, hidden gardens. Hit <b>Acorn Street</b> early before the crowds; it's the most photographed street in America and Allie will want the shot. Beth called this one, and Jeffrey O'Neill seconded the neighborhood.</p>
+        <div class="chips"><span class="chip walk">Walk · the hill is the activity</span></div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">10:45</div><div class="dot"></div>
+      <div class="card">
+        <h3>Public Garden + swan boats</h3>
+        <p>Cross Charles Street into the Public Garden. The swan boats are $5, run since 1877, and are gloriously unhurried. Make Way for Ducklings statues on the way out.</p>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">11:30</div><div class="dot"></div>
+      <div class="card">
+        <h3>Newbury Street: her hours <span class="badge">Allie's pick</span></h3>
+        <p>Sharon's daughter was obsessed with Back Bay and yours will be too. Eight blocks of shops from Arlington to Mass Ave. Your job is to carry bags and say yes. Beth warned you this won't be your favorite part of the trip; that's how you know it's working.</p>
+        <div class="chips"><span class="chip walk">Walk · Newbury runs parallel to the Garden</span></div>
+        <p class="tip">Two minute detour at Copley: step into the Boston Public Library courtyard. It's free, it's stunning, and it's a library, not a museum, so it doesn't break your rules.</p>
+      </div>
+    </div>
+
+    <div class="leg meal">
+      <div class="time">1:00</div><div class="dot"></div>
+      <div class="card">
+        <h3>Lunch on Newbury <span class="badge">Meal</span></h3>
+        <p>Keep it easy and outdoors: <b>Stephanie's on Newbury</b> for classic patio people watching, or <b>Faccia a Faccia</b> if you want a chicer room. Wherever she points.</p>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">2:30</div><div class="dot"></div>
+      <div class="card">
+        <h3>Ferry to Georges Island, Boston Harbor Islands <span class="badge res">Book ferry</span></h3>
+        <p>Robert Nagle's advice, taken: the harbor over the Freedom Trail. T back to Long Wharf and catch the harbor islands ferry out to Georges Island. Explore <b>Fort Warren</b>, a Civil War era granite fort with dark tunnels, ramparts, and skyline views back to the city. It reads as adventure, not history homework.</p>
+        <div class="chips"><span class="chip red">Red + walk · Charles/MGH to Long Wharf area</span><span class="chip ferry">Harbor Islands ferry · 30 min crossing</span></div>
+        <p class="tip">Check the return schedule when you land on the island. Aim for a boat back around 5:00 to 5:30.</p>
+        <div class="swap"><b>Swap</b> · A 2 to 3 hour afternoon whale watch from Long Wharf if you'd both rather chase humpbacks than forts. Books out on summer Saturdays, so decide by Thursday.</div>
+      </div>
+    </div>
+
+    <div class="leg meal">
+      <div class="time">6:30</div><div class="dot"></div>
+      <div class="card">
+        <h3>Dinner: Barcelona Wine Bar, South End <span class="badge res">Reserve now</span></h3>
+        <p>Matt Kelleher's tapas call. Order in waves: patatas bravas, gambas al ajillo, the char grilled steak skewers. The South End is where Boston actually eats; the whole neighborhood backs him up.</p>
+        <div class="chips"><span class="chip walk">Rideshare · 10 min from Seaport, or Long Wharf</span></div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">8:15</div><div class="dot"></div>
+      <div class="card">
+        <h3>Sunset at View Boston <span class="badge res">Timed tickets</span></h3>
+        <p>Lien's bonus rec, deployed at the right hour. Walk 15 minutes from the South End to the Prudential Tower and ride to the 52nd floor for sunset over the whole city, harbor to the Charles. Sunset is about 8:10; book the 8:00 window and stay for the lights coming up.</p>
+        <div class="chips"><span class="chip walk">Walk · 15 min through the South End</span></div>
+        <p class="tip">On the walk over, cut past the Christian Science Plaza reflecting pool. At dusk it mirrors the whole skyline.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SUNDAY ================= -->
+<section class="day" id="sun">
+  <div class="dayhead">
+    <h2>Day 3 · Sunday, July 26</h2>
+    <p class="course">Quack loudly, dim sum, one last lap of the harbor, then an unhurried run at Logan.</p>
+    <p class="wx" data-date="2026-07-26"></p>
+  </div>
+  <div class="course-line">
+
+    <div class="leg meal">
+      <div class="time">8:30</div><div class="dot"></div>
+      <div class="card">
+        <h3>Breakfast: Flour Bakery, Fort Point <span class="badge">Meal</span></h3>
+        <p>Joanne Chang's original. The sticky bun is famous for a reason; split one alongside real breakfast. Seven minute walk from the hotel, and you can check flight status over coffee.</p>
+        <div class="chips"><span class="chip walk">Walk · 7 min</span></div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">10:30</div><div class="dot"></div>
+      <div class="card">
+        <h3>Boston Duck Tour <span class="badge res">Booked · 10:30</span></h3>
+        <p>The single most repeated recommendation you got, from Jeffrey, Megan, and Adrian. It's a loop: departs from and returns to the <b>Prudential Center (Huntington Ave side)</b>, about 80 minutes through the city in a WWII style amphibious vehicle, including the moment it drives straight into the Charles River. Pure fun, zero museum content, and the conDUCKtor will absolutely make Allie quack at strangers. Back at the Pru just before noon.</p>
+        <div class="chips"><span class="chip walk">Rideshare · 10 min to Prudential, arrive 10:10</span></div>
+        <p class="tip">Ask to sit near the front for the river entry splash.</p>
+      </div>
+    </div>
+
+    <div class="leg meal">
+      <div class="time">12:15</div><div class="dot"></div>
+      <div class="card">
+        <h3>Lunch: Sunday dim sum in Chinatown <span class="badge">Meal</span></h3>
+        <p>Vaibhav vouched for Chinatown, and Sunday is its best day. Fifteen minute walk from the Duck Tour drop-off. <b>China Pearl</b> for classic rolling cart dim sum, pointing at whatever looks good, or <b>Gourmet Dumpling House</b> for soup dumplings. Bubble tea on the way out is mandatory for the 20 year old.</p>
+        <div class="chips"><span class="chip walk">Walk · 15 min from Prudential</span></div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">1:30</div><div class="dot"></div>
+      <div class="card">
+        <h3>Greenway back, with an optional final cannoli</h3>
+        <p>Exit through the Chinatown Gate onto the Rose Kennedy Greenway and stroll it north one last time: fountains, carousel, public art. If Friday's Modern Pastry run left a mark, the North End is ten minutes further for a boxed half dozen to fly home with.</p>
+        <div class="chips"><span class="chip walk">Walk · 20 min, all Greenway</span></div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">2:45</div><div class="dot"></div>
+      <div class="card">
+        <h3>Last hour on the harbor</h3>
+        <p>Back to the Seaport for a slow lap of the Harborwalk at Fan Pier, the adirondack swings at The Lawn on D, or just a coffee facing the water. This is the deliberately empty block; whatever the weekend still owes you, collect it here.</p>
+        <div class="chips"><span class="chip walk">Walk · 20 min from North End, 25 from Chinatown</span></div>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">3:45</div><div class="dot"></div>
+      <div class="card">
+        <h3>Collect bags at the hotel</h3>
+        <p>Grab luggage from the bell desk, water bottles filled, boarding passes on your phones.</p>
+      </div>
+    </div>
+
+    <div class="leg">
+      <div class="time">4:15</div><div class="dot"></div>
+      <div class="card">
+        <h3>Cross back to Logan the way you came <span class="badge">Buffer built in</span></h3>
+        <p>Reverse Friday: <b>(1)</b> 4:15, walk 6 minutes from the hotel to the Fan Pier dock; call the water taxi 15 minutes ahead so the boat is waiting. <b>(2)</b> Ten minute crossing to the <b>Logan Boat Dock</b>. <b>(3)</b> Board the free Route 66 shuttle at the dock and hop off at the <b>Terminal B</b> sign; United check-in is on the departures level, Level 2. <b>(4)</b> You're at check-in around 4:50, a full 2.5 hours before UA2136's 7:24 departure. Since Logan is new territory, that's real cushion for finding bag drop and security, with time left for a relaxed airside dinner.</p>
+        <div class="chips"><span class="chip taxi">Walk + water taxi + shuttle · about 35 min door to terminal</span></div>
+        <div class="swap"><b>Backup</b> · SL1 from Silver Line Way runs direct to every terminal, about 25 min. Fares run one way here: free coming from Logan, standard $2.40 fare going to it. Tap a contactless card or phone when boarding.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CHECKLIST ================= -->
+<div class="panel">
+  <h2>Before you fly</h2>
+  <p class="lede">Six bookings, in the order they'll sell out. Tap to check off.</p>
+  <ul class="todo" id="todo">
+    <li><span class="box"></span><span><b>Duck Tour, Sunday 10:30 AM</b> · Prudential departure, 2 seats. Grab it before it goes too.</span></li>
+    <li><span class="box"></span><span><b>View Boston, Saturday ~8:00 PM</b> · timed sunset tickets for 2.</span></li>
+    <li><span class="box"></span><span><b>Barcelona Wine Bar South End, Saturday 6:30 PM</b> · table for 2.</span></li>
+    <li><span class="box"></span><span><b>Tony &amp; Elaine's, Friday 6:45 PM</b> · ask for outdoor seating.</span></li>
+    <li><span class="box"></span><span><b>Harbor Islands ferry, Saturday afternoon</b> · round trip to Georges Island, or swap to a whale watch and book that instead.</span></li>
+    <li><span class="box"></span><span><b>Save the water taxi number</b> · Boston Harbor water taxis run on demand; have the app or number ready when you land.</span></li>
+  </ul>
+  <p class="notes"><b>Good to know:</b> Late July runs warm and humid; the harbor legs are the built in air conditioning. Allie is 20, so this plan keeps everything all ages: restaurants yes, bars no, which is why Tall Ship Boston didn't make the cut. Sunday is padded on purpose: at Logan by ~4:50 for a 7:24 flight, since it's your first time in that airport. Checkout is likely noon, so drop bags with the bell desk Sunday morning before the Duck Tour. Everything here is walk, boat, or one T ride, exactly as ordered.</p>
+</div>
+
+<footer>Course plotted for M + A · Compiled from the Long Angle and Facebook fleet</footer>
+
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const days = document.querySelectorAll('.day');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    days.forEach(d => d.classList.remove('show'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.day).classList.add('show');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }));
+
+  /* ---- Checklist with persistence (window.storage in the Claude app, memory elsewhere) ---- */
+  const todoItems = [...document.querySelectorAll('#todo li')];
+  async function saveChecks(){
+    const done = todoItems.map((li,i)=>li.classList.contains('done')?i:-1).filter(i=>i>=0);
+    try{ await window.storage.set('boston-trip-todo', JSON.stringify(done)); }catch(e){}
+  }
+  async function loadChecks(){
+    try{
+      const r = await window.storage.get('boston-trip-todo');
+      if(r && r.value) JSON.parse(r.value).forEach(i=>todoItems[i]&&todoItems[i].classList.add('done'));
+    }catch(e){}
+  }
+  todoItems.forEach(li => li.addEventListener('click', () => { li.classList.toggle('done'); saveChecks(); }));
+  loadChecks();
+
+  /* ---- One-tap Apple Maps links on every stop ---- */
+  const pins = [
+    ['Barking Crab','Barking Crab 88 Sleeper St Boston'],
+    ['Faneuil','Quincy Market Boston'],
+    ['Greenway to the North End','Modern Pastry 257 Hanover St Boston'],
+    ["Tony &amp; Elaine's","Tony and Elaine's 111 N Washington St Boston"],
+    ['Columbus Park','Christopher Columbus Waterfront Park Boston'],
+    ['Tatte','Tatte Bakery Charles Street Boston'],
+    ['Acorn','Acorn Street Boston'],
+    ['swan boats','Boston Public Garden'],
+    ['her hours','Newbury Street Boston'],
+    ['Lunch on Newbury',"Stephanie's on Newbury Boston"],
+    ['Georges Island','Long Wharf Boston'],
+    ['Barcelona','Barcelona Wine Bar 525 Tremont St Boston'],
+    ['View Boston','View Boston 800 Boylston St'],
+    ['Flour','Flour Bakery 12 Farnsworth St Boston'],
+    ['Duck Tour','Boston Duck Tours Prudential Center'],
+    ['dim sum','China Pearl 9 Tyler St Boston'],
+    ['Greenway back','Rose Kennedy Greenway Boston'],
+    ['Last hour','Fan Pier Park Boston'],
+    ['Hyatt Place','Hyatt Place Boston Seaport District']
+  ];
+  document.querySelectorAll('.card h3').forEach(h => {
+    const hit = pins.find(p => h.innerHTML.includes(p[0]));
+    if(hit){
+      const a = document.createElement('a');
+      a.className = 'mappin';
+      a.textContent = 'MAP';
+      a.href = 'https://maps.apple.com/?q=' + encodeURIComponent(hit[1]);
+      a.target = '_blank'; a.rel = 'noopener';
+      h.appendChild(a);
+    }
+  });
+
+  /* ---- Live weekend weather (Open-Meteo, no key). Fails silently if offline or blocked. ---- */
+  (async () => {
+    try{
+      const url = 'https://api.open-meteo.com/v1/forecast?latitude=42.353&longitude=-71.044'
+        + '&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max'
+        + '&temperature_unit=fahrenheit&timezone=America%2FNew_York'
+        + '&start_date=2026-07-24&end_date=2026-07-26';
+      const res = await fetch(url);
+      const d = await res.json();
+      if(!d.daily) return;
+      d.daily.time.forEach((t,i)=>{
+        const el = document.querySelector('.wx[data-date="'+t+'"]');
+        if(el) el.textContent = 'Forecast · H ' + Math.round(d.daily.temperature_2m_max[i]) + '\u00B0 / L '
+          + Math.round(d.daily.temperature_2m_min[i]) + '\u00B0 · ' + d.daily.precipitation_probability_max[i] + '% rain';
+      });
+    }catch(e){ /* no network, no problem: the plan stands */ }
+  })();
+</script>
+</body>
+</html>
