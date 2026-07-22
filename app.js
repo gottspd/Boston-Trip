@@ -109,16 +109,85 @@ function renderPanel(c) {
 
 /* ---------- behaviour wiring ---------- */
 
+function activateDay(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.day === id));
+  document.querySelectorAll('.day').forEach(d => d.classList.toggle('show', d.id === id));
+}
+
 function wireTabs() {
-  const tabs = document.querySelectorAll('.tab');
-  const days = document.querySelectorAll('.day');
-  tabs.forEach(t => t.addEventListener('click', () => {
-    tabs.forEach(x => x.classList.remove('active'));
-    days.forEach(d => d.classList.remove('show'));
-    t.classList.add('active');
-    document.getElementById(t.dataset.day).classList.add('show');
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    activateDay(t.dataset.day);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }));
+}
+
+/* ---- "You are here": open the current day and scroll to the current leg ----
+   Leg times mix AM/PM (e.g. 8:45 and 8:15), but legs are chronological, so we
+   resolve each to real minutes-since-midnight by keeping the sequence rising. */
+function dayLegMinutes(day) {
+  let prev = -1;
+  return (day.legs || []).map(leg => {
+    const [h, m] = String(leg.time).split(':').map(Number);
+    let mins = (h % 12) * 60 + (m || 0);   // 12 -> 0
+    while (mins < prev) mins += 720;        // bump into PM to stay increasing
+    prev = mins;
+    return mins;
+  });
+}
+
+function nowInTrip(tz) {
+  // ?now=YYYY-MM-DDTHH:MM overrides the clock (for previewing / testing).
+  const override = new URLSearchParams(location.search).get('now');
+  if (override) {
+    const [d, t] = override.split('T');
+    const [h, m] = (t || '00:00').split(':').map(Number);
+    return { dateStr: d, minutes: (h || 0) * 60 + (m || 0) };
+  }
+  try {
+    const p = new Intl.DateTimeFormat('en-CA', {
+      timeZone: tz || undefined, year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', hour12: false
+    }).formatToParts(new Date());
+    const g = type => p.find(x => x.type === type).value;
+    return { dateStr: `${g('year')}-${g('month')}-${g('day')}`, minutes: (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10) };
+  } catch (e) {
+    const d = new Date();
+    return { dateStr: d.toISOString().slice(0, 10), minutes: d.getHours() * 60 + d.getMinutes() };
+  }
+}
+
+function autoLocate(trip) {
+  const days = trip.days || [];
+  if (!days.length) return;
+  const now = nowInTrip(trip.weather && trip.weather.timezone);
+  const dates = days.map(d => d.date);
+
+  let activeIdx, legIdx = null;
+  if (now.dateStr < dates[0]) {
+    activeIdx = 0;                                   // before the trip: show the start
+  } else if (now.dateStr > dates[dates.length - 1]) {
+    activeIdx = days.length - 1;                     // after the trip: show the end
+  } else {
+    let i = days.findIndex(d => d.date === now.dateStr);
+    if (i < 0) {                                     // between listed days
+      i = days.findIndex(d => d.date > now.dateStr);
+      activeIdx = i < 0 ? days.length - 1 : i;
+    } else {
+      activeIdx = i;
+      const mins = dayLegMinutes(days[i]);
+      let cur = 0;
+      for (let k = 0; k < mins.length; k++) if (mins[k] <= now.minutes) cur = k;
+      legIdx = cur;                                  // last leg already started (or the first)
+    }
+  }
+
+  activateDay(days[activeIdx].id);
+  if (legIdx == null) return;
+  const section = document.getElementById(days[activeIdx].id);
+  const el = section && section.querySelectorAll('.leg')[legIdx];
+  if (!el) return;
+  el.classList.add('now');
+  setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 90);
 }
 
 function wireChecklist(storageKey) {
@@ -225,6 +294,7 @@ async function main() {
 
   wireTabs();
   wireChecklist(trip.storageKey);
+  autoLocate(trip);
   loadWeather(trip);
 }
 
