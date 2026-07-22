@@ -432,14 +432,46 @@
     "heading": "Before you fly",
     "lede": "Six bookings, in the order they'll sell out. Tap to check off.",
     "items": [
-      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Duck%20Tours%20Prudential%20Center\" target=\"_blank\" rel=\"noopener\">Duck Tour</a>, Sunday 10:30 AM</b> · Prudential departure, 2 seats. Grab it before it goes too.",
-      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=View%20Boston%20800%20Boylston%20St\" target=\"_blank\" rel=\"noopener\">View Boston</a>, Saturday ~8:00 PM</b> · timed sunset tickets for 2.",
-      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Barcelona%20Wine%20Bar%20525%20Tremont%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Barcelona Wine Bar</a> South End, Saturday 6:30 PM</b> · table for 2.",
-      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Tony%20and%20Elaine%27s%20111%20N%20Washington%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Tony &amp; Elaine's</a>, Friday 6:45 PM</b> · ask for outdoor seating.",
-      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Harbor%20Islands%20Ferry%20Long%20Wharf%20Boston\" target=\"_blank\" rel=\"noopener\">Harbor Islands ferry</a>, Saturday afternoon</b> · round trip to Georges Island, or swap to a whale watch and book that instead.",
-      "<b>Save the water taxi number</b> · Boston Harbor water taxis run on demand; have the app or number ready when you land."
+      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Duck%20Tours%20Prudential%20Center\" target=\"_blank\" rel=\"noopener\">Duck Tour</a>, Sunday 10:30 AM</b> · Prudential departure, 2 seats. Grab it before it goes too. <a class=\"act\" href=\"https://bostonducktours.com/on-sale/\" target=\"_blank\" rel=\"noopener\">Book tickets ›</a>",
+      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=View%20Boston%20800%20Boylston%20St\" target=\"_blank\" rel=\"noopener\">View Boston</a>, Saturday ~8:00 PM</b> · timed sunset tickets for 2. <a class=\"act\" href=\"https://viewboston.com/buy-tickets/\" target=\"_blank\" rel=\"noopener\">Book tickets ›</a>",
+      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Barcelona%20Wine%20Bar%20525%20Tremont%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Barcelona Wine Bar</a> South End, Saturday 6:30 PM</b> · table for 2. <a class=\"act\" href=\"https://barcelonawinebar.com/reservations/\" target=\"_blank\" rel=\"noopener\">Reserve ›</a> <a class=\"act\" href=\"tel:+16172662600\">Call</a>",
+      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Tony%20and%20Elaine%27s%20111%20N%20Washington%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Tony &amp; Elaine's</a>, Friday 6:45 PM</b> · ask for outdoor seating. <a class=\"act\" href=\"https://www.tonyandelaines.com/reservations\" target=\"_blank\" rel=\"noopener\">Reserve ›</a> <a class=\"act\" href=\"tel:+16175800321\">Call</a>",
+      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Harbor%20Islands%20Ferry%20Long%20Wharf%20Boston\" target=\"_blank\" rel=\"noopener\">Harbor Islands ferry</a>, Saturday afternoon</b> · round trip to Georges Island, or swap to a whale watch and book that instead. <a class=\"act\" href=\"https://www.bostonharborislands.org/ferry-tickets/\" target=\"_blank\" rel=\"noopener\">Ferry tickets ›</a>",
+      "<b>Water taxi on demand</b> · Boston Harbor water taxis run on call when you land. <a class=\"act\" href=\"tel:+16174068584\">Call 617-406-8584</a> <a class=\"act\" href=\"https://www.bostonwatertaxi.com/\" target=\"_blank\" rel=\"noopener\">Get the app ›</a>"
     ],
     "notes": "<b>Good to know:</b> Late July runs warm and humid; the harbor legs are the built in air conditioning. Allie is 20, so this plan keeps everything all ages: restaurants yes, bars no, which is why Tall Ship Boston didn't make the cut. Sunday is padded on purpose: at Logan by ~4:50 for a 7:24 flight, since it's your first time in that airport. Checkout is likely noon, so drop bags with the bell desk Sunday morning before the Duck Tour. Everything here is walk, boat, or one T ride, exactly as ordered."
   },
-  "footer": "Course plotted for M + A · Compiled from the Long Angle and Facebook fleet"
+  "footer": "Course plotted for M + A · Compiled from the Long Angle and Facebook fleet",
+  "base": "Hyatt Place Boston Seaport District",
+  "packing": {
+    "heading": "Pack light — carry-on only",
+    "lede": "Two bags, no checked luggage. Tap to pack.",
+    "items": [
+      "Broken-in walking shoes — you two will log 15k+ steps a day",
+      "Light layers + a packable rain shell for the harbor breeze",
+      "Sunglasses, a hat, and sunscreen (July sun bounces off the water)",
+      "Portable battery pack + charging cables",
+      "Refillable water bottle each",
+      "Any meds, plus a few blister bandages — moleskin saves the trip",
+      "IDs and a card or two; boarding passes saved on your phones",
+      "A packable tote for Newbury St finds and a boxed half-dozen cannoli",
+      "One nicer outfit each for dinners (Tony &amp; Elaine's, Barcelona)"
+    ]
+  },
+  "photos": {
+    "heading": "Photo hit list",
+    "lede": "The shots to come home with. Tap when you've got it.",
+    "items": [
+      "Allie's first look at Boston — from the water taxi",
+      "Acorn Street cobblestones, before the crowds",
+      "A swan-boat selfie in the Public Garden",
+      "Quack at a stranger on the Duck Tour",
+      "Cannoli close-up at Modern Pastry",
+      "Sunset over the whole city from View Boston",
+      "Deep inside a Fort Warren tunnel",
+      "The Make Way for Ducklings statues",
+      "A lobster roll, caught before it disappears",
+      "Golden hour on the Harborwalk — dad + daughter"
+    ]
+  }
 }

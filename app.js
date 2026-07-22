@@ -47,7 +47,27 @@ function renderNav(days) {
   return `<nav aria-label="Days">\n  ${tabs}\n</nav>`;
 }
 
-function renderLeg(leg) {
+// Turn a leg's transit chips into one-tap actions: walking directions from the
+// previous stop, and Uber/Lyft to this stop when the plan calls for a rideshare.
+function actionChips(leg, origin) {
+  if (!leg.map) return '';
+  const labels = (leg.chips || []).map(c => (c.label || '').toLowerCase());
+  const out = [];
+  const dest = encodeURIComponent(leg.map);
+  if (labels.some(l => l.includes('walk')) && origin) {
+    const u = 'https://maps.apple.com/?saddr=' + encodeURIComponent(origin) + '&daddr=' + dest + '&dirflg=w';
+    out.push(`<a class="chip act" href="${attr(u)}" target="_blank" rel="noopener">Walk directions ›</a>`);
+  }
+  if (labels.some(l => l.includes('rideshare'))) {
+    const uber = 'https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=' + dest;
+    const lyft = 'https://lyft.com/ride?id=lyft&destination[address]=' + dest;
+    out.push(`<a class="chip act" href="${attr(uber)}" target="_blank" rel="noopener">Uber ›</a>`);
+    out.push(`<a class="chip act" href="${attr(lyft)}" target="_blank" rel="noopener">Lyft ›</a>`);
+  }
+  return out.join('');
+}
+
+function renderLeg(leg, origin) {
   let h3 = leg.titleHtml;
   if (leg.badge) {
     h3 += ` <span class="badge${leg.badge.res ? ' res' : ''}">${leg.badge.text}</span>`;
@@ -61,11 +81,10 @@ function renderLeg(leg) {
   }
 
   let inner = `<p>${leg.bodyHtml}</p>`;
-  if (leg.chips && leg.chips.length) {
-    const chips = leg.chips.map(c =>
-      `<span class="chip ${attr(c.type)}">${c.label}</span>`
-    ).join('');
-    inner += `\n        <div class="chips">${chips}</div>`;
+  const chips = (leg.chips || []).map(c => `<span class="chip ${attr(c.type)}">${c.label}</span>`).join('');
+  const acts = actionChips(leg, origin);
+  if (chips || acts) {
+    inner += `\n        <div class="chips">${chips}${acts}</div>`;
   }
   if (leg.tipHtml) inner += `\n        <p class="tip">${leg.tipHtml}</p>`;
   if (leg.swap) inner += `\n        <div class="swap"><b>${leg.swap.label}</b> · ${leg.swap.bodyHtml}</div>`;
@@ -79,8 +98,14 @@ function renderLeg(leg) {
     </div>`;
 }
 
-function renderDay(d, i) {
-  const legs = (d.legs || []).map(renderLeg).join('\n\n    ');
+function renderDay(d, i, base) {
+  // Track the previous located stop so each leg can offer directions from it.
+  let origin = base || null;
+  const legs = (d.legs || []).map(leg => {
+    const html = renderLeg(leg, origin);
+    if (leg.map) origin = leg.map;
+    return html;
+  }).join('\n\n    ');
   return `<section class="day${i === 0 ? ' show' : ''}" id="${attr(d.id)}">
   <div class="dayhead">
     <h2>${d.heading}</h2>
@@ -93,17 +118,17 @@ function renderDay(d, i) {
 </section>`;
 }
 
-function renderPanel(c) {
+function renderPanel(c, listId) {
   const items = (c.items || []).map(it =>
     `<li><span class="box"></span><span>${it}</span></li>`
   ).join('\n    ');
   return `<div class="panel">
   <h2>${c.heading}</h2>
   <p class="lede">${c.lede}</p>
-  <ul class="todo" id="todo">
+  <ul class="todo" id="${listId}">
     ${items}
   </ul>
-  <p class="notes">${c.notes}</p>
+  ${c.notes ? `<p class="notes">${c.notes}</p>` : ''}
 </div>`;
 }
 
@@ -156,46 +181,121 @@ function nowInTrip(tz) {
   }
 }
 
-function autoLocate(trip) {
-  const days = trip.days || [];
-  if (!days.length) return;
-  const now = nowInTrip(trip.weather && trip.weather.timezone);
-  const dates = days.map(d => d.date);
-
-  let activeIdx, legIdx = null;
-  if (now.dateStr < dates[0]) {
-    activeIdx = 0;                                   // before the trip: show the start
-  } else if (now.dateStr > dates[dates.length - 1]) {
-    activeIdx = days.length - 1;                     // after the trip: show the end
-  } else {
-    let i = days.findIndex(d => d.date === now.dateStr);
-    if (i < 0) {                                     // between listed days
-      i = days.findIndex(d => d.date > now.dateStr);
-      activeIdx = i < 0 ? days.length - 1 : i;
-    } else {
-      activeIdx = i;
-      const mins = dayLegMinutes(days[i]);
-      let cur = 0;
-      for (let k = 0; k < mins.length; k++) if (mins[k] <= now.minutes) cur = k;
-      legIdx = cur;                                  // last leg already started (or the first)
-    }
-  }
-
-  activateDay(days[activeIdx].id);
-  if (legIdx == null) return;
-  const section = document.getElementById(days[activeIdx].id);
-  const el = section && section.querySelectorAll('.leg')[legIdx];
-  if (!el) return;
-  el.classList.add('now');
-  setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 90);
+function plainText(html) { const d = document.createElement('div'); d.innerHTML = html; return d.textContent || ''; }
+function absMin(dateStr, min) { return Math.round(Date.parse(dateStr + 'T00:00:00Z') / 60000) + min; }
+function fmtClock(min) { let h = Math.floor(min / 60), m = min % 60, p = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return h + ':' + String(m).padStart(2, '0') + ' ' + p; }
+function fmtDelta(mins) {
+  if (mins <= 0) return 'now';
+  if (mins < 60) return 'in ' + mins + 'm';
+  if (mins < 1440) { const h = Math.floor(mins / 60), m = mins % 60; return m ? `in ${h}h ${m}m` : `in ${h}h`; }
+  const d = Math.round(mins / 1440); return 'in ' + d + (d > 1 ? ' days' : ' day');
 }
 
-function wireChecklist(storageKey) {
-  const KEY = storageKey || 'trip-todo';
-  const todoItems = [...document.querySelectorAll('#todo li')];
+// Flatten every leg into one chronological list with its real minutes + DOM index.
+function flatLegs(trip) {
+  const out = [];
+  (trip.days || []).forEach(day => {
+    const mins = dayLegMinutes(day);
+    (day.legs || []).forEach((leg, i) => out.push({
+      dayId: day.id, i, date: day.date, min: mins[i],
+      title: plainText(leg.titleHtml), dayLabel: (day.tab && day.tab.label) || day.id
+    }));
+  });
+  return out;
+}
+
+function tripStatus(trip, now) {
+  const legs = flatLegs(trip);
+  if (!legs.length) return null;
+  const past = L => (L.date < now.dateStr) || (L.date === now.dateStr && L.min <= now.minutes);
+  let current = null, next = null;
+  for (const L of legs) { if (past(L)) current = L; else { next = L; break; } }
+  return { current, next, nowAbs: absMin(now.dateStr, now.minutes) };
+}
+
+function legElement(dayId, i) { const s = document.getElementById(dayId); return s ? s.querySelectorAll('.leg')[i] : null; }
+
+function setNowMarker(status, now) {
+  document.querySelectorAll('.leg.now').forEach(e => e.classList.remove('now'));
+  const c = status.current;
+  if (c && c.date === now.dateStr) { const el = legElement(c.dayId, c.i); if (el) el.classList.add('now'); }
+}
+
+// The fixed "Now / Next" bar at the bottom of the screen.
+function updateNowBar(status, now) {
+  let bar = document.getElementById('nowbar');
+  if (!bar) { bar = document.createElement('div'); bar.id = 'nowbar'; bar.setAttribute('role', 'button'); document.body.appendChild(bar); }
+  const c = status.current, n = status.next;
+  let label, title, sub, dayId, legIdx;
+
+  if (!c && n) {                                   // before the trip
+    label = 'Starts ' + n.dayLabel;
+    title = n.title;
+    sub = fmtClock(n.min) + ' · ' + fmtDelta(absMin(n.date, n.min) - status.nowAbs);
+    dayId = n.dayId; legIdx = n.i;
+  } else if (c && !n) {                            // trip over
+    label = 'Trip complete'; title = 'Safe travels home ✈️'; sub = '';
+    dayId = c.dayId; legIdx = c.i;
+  } else if (c && n) {
+    const delta = fmtDelta(absMin(n.date, n.min) - status.nowAbs);
+    if (c.date === now.dateStr) {                  // mid-day: show Now + Next
+      label = 'Now'; title = c.title;
+      const dl = n.date === now.dateStr ? '' : n.dayLabel + ' ';
+      sub = 'Next · ' + dl + fmtClock(n.min) + ' · ' + n.title + ' · ' + delta;
+      dayId = c.dayId; legIdx = c.i;
+    } else {                                       // overnight: show what's up next
+      label = 'Up next'; title = n.title;
+      sub = n.dayLabel + ' · ' + fmtClock(n.min) + ' · ' + delta;
+      dayId = n.dayId; legIdx = n.i;
+    }
+  } else { bar.hidden = true; return; }
+
+  bar.hidden = false;
+  bar.innerHTML = '<span class="nb-dot"></span><div class="nb-main">'
+    + '<div class="nb-now">' + attr(label) + '</div>'
+    + '<div class="nb-title">' + attr(title) + '</div>'
+    + (sub ? '<div class="nb-next">' + attr(sub) + '</div>' : '')
+    + '</div><span class="nb-cta">Jump ›</span>';
+  bar.onclick = () => {
+    activateDay(dayId);
+    const el = legElement(dayId, legIdx);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 60);
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+}
+
+// Recompute "now" marker + bar; called on load and once a minute.
+function refreshLive(trip) {
+  const now = nowInTrip(trip.weather && trip.weather.timezone);
+  const status = tripStatus(trip, now);
+  if (!status) return;
+  setNowMarker(status, now);
+  updateNowBar(status, now);
+}
+
+// On first load, open the current day and scroll to where we are.
+function autoLocate(trip) {
+  const now = nowInTrip(trip.weather && trip.weather.timezone);
+  const status = tripStatus(trip, now);
+  if (!status) return;
+  const c = status.current, n = status.next;
+  let target = null;
+  if (c && c.date === now.dateStr) target = c;              // during the day
+  else if (c && n) target = n;                              // overnight → next up
+  else if (c && !n) target = c;                             // after → the finale
+  else if (!c && n) { activateDay((trip.days[0] || {}).id); return; }  // before → rest at top
+  if (!target) return;
+  activateDay(target.dayId);
+  const el = legElement(target.dayId, target.i);
+  if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+}
+
+function wireList(listId, storageKey) {
+  const KEY = storageKey || ('trip-' + listId);
+  const items = [...document.querySelectorAll('#' + listId + ' li')];
 
   async function save() {
-    const done = todoItems.map((li, i) => li.classList.contains('done') ? i : -1).filter(i => i >= 0);
+    const done = items.map((li, i) => li.classList.contains('done') ? i : -1).filter(i => i >= 0);
     const val = JSON.stringify(done);
     // Prefer the Claude app's window.storage when present; fall back to localStorage.
     try { if (window.storage && window.storage.set) { await window.storage.set(KEY, val); return; } } catch (e) {}
@@ -205,9 +305,12 @@ function wireChecklist(storageKey) {
     let val = null;
     try { if (window.storage && window.storage.get) { const r = await window.storage.get(KEY); val = r && r.value; } } catch (e) {}
     if (val == null) { try { val = localStorage.getItem(KEY); } catch (e) {} }
-    if (val) { try { JSON.parse(val).forEach(i => todoItems[i] && todoItems[i].classList.add('done')); } catch (e) {} }
+    if (val) { try { JSON.parse(val).forEach(i => items[i] && items[i].classList.add('done')); } catch (e) {} }
   }
-  todoItems.forEach(li => li.addEventListener('click', () => { li.classList.toggle('done'); save(); }));
+  items.forEach(li => li.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;   // let booking / call links work without checking the item off
+    li.classList.toggle('done'); save();
+  }));
   load();
 }
 
@@ -287,14 +390,21 @@ async function main() {
   app.innerHTML = [
     renderHeader(trip.header),
     renderNav(trip.days),
-    ...trip.days.map((d, i) => renderDay(d, i)),
-    renderPanel(trip.checklist),
+    ...trip.days.map((d, i) => renderDay(d, i, trip.base)),
+    renderPanel(trip.checklist, 'todo'),
+    trip.packing ? renderPanel(trip.packing, 'packlist') : '',
+    trip.photos ? renderPanel(trip.photos, 'photolist') : '',
     `<footer>${trip.footer}</footer>`
   ].join('\n\n');
 
   wireTabs();
-  wireChecklist(trip.storageKey);
+  wireList('todo', trip.storageKey);
+  const base = trip.storageKey || 'trip';
+  if (trip.packing) wireList('packlist', base + '-pack');
+  if (trip.photos) wireList('photolist', base + '-photos');
   autoLocate(trip);
+  refreshLive(trip);
+  setInterval(() => refreshLive(trip), 60000);
   loadWeather(trip);
 }
 

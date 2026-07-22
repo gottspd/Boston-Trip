@@ -208,6 +208,36 @@ a.pin:hover{text-decoration:underline}
   font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;
   letter-spacing:.14em;text-transform:uppercase;color:var(--buoy);
 }
+
+/* one-tap action chips: walking directions / Uber / Lyft */
+.chip.act{cursor:pointer;text-decoration:none;color:var(--ferry);border-color:var(--ferry);background:#fff}
+.chip.act::before{content:none}
+.chip.act:hover{background:var(--ferry);color:#fff}
+
+/* checklist action links: book / reserve / tickets / call */
+a.act{
+  display:inline-block;margin-left:6px;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.04em;
+  color:#7FD4DD;text-decoration:none;border:1px solid rgba(127,212,221,.5);border-radius:20px;
+  padding:1px 8px;white-space:nowrap;
+}
+a.act:hover{background:rgba(127,212,221,.15);border-color:#7FD4DD}
+
+/* fixed "Now / Next" bar */
+#nowbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:flex;align-items:center;gap:12px;cursor:pointer;
+  padding:9px 16px calc(9px + env(safe-area-inset-bottom, 0px));
+  background:var(--ink);color:#E8EFF1;border-top:2px solid var(--buoy);
+  box-shadow:0 -3px 14px rgba(22,48,60,.22);font-family:'Archivo',sans-serif;
+}
+#nowbar[hidden]{display:none}
+#nowbar .nb-dot{flex:none;width:9px;height:9px;border-radius:50%;background:var(--buoy);box-shadow:0 0 0 4px rgba(198,69,44,.25)}
+#nowbar .nb-main{flex:1;min-width:0;line-height:1.2}
+#nowbar .nb-now{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8fb0b9}
+#nowbar .nb-title{font-weight:700;font-size:14.5px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#nowbar .nb-next{font-size:12px;color:#AFC5CC;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#nowbar .nb-cta{flex:none;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#f0a58f}
 footer{
   margin-top:40px;text-align:center;font-family:'IBM Plex Mono',monospace;
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
