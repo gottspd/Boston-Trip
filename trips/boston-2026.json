@@ -14,7 +14,7 @@
   "header": {
     "eyebrow": "Plotted course · Fri Jul 24 to Sun Jul 26, 2026",
     "titleHtml": "Boston, with <em>Allie</em>",
-    "sub": "A daddy daughter weekend on foot and on the water. Home port: Hyatt Place Seaport District. No car, no museums, no Fenway. Just the harbor, the neighborhoods, and the food.",
+    "sub": "A daddy daughter weekend on foot and on the water. Home port: Hyatt Place Seaport District. Just the harbor, the neighborhoods, and the food.",
     "facts": [
       {
         "html": "Land <b>10:20 AM</b> Fri · UA641 · Term B ↗",
@@ -475,9 +475,26 @@
     ]
   },
   "optional": {
-    "heading": "Optional detour · Cambridge",
-    "lede": "One extra idea, with my honest take on whether to bother.",
+    "heading": "Optional add-ons",
+    "lede": "A couple of extra ideas — with my honest take on each.",
     "cards": [
+      {
+        "titleHtml": "Boston Tea Party Ships &amp; Museum",
+        "badge": {
+          "text": "Optional"
+        },
+        "web": "https://www.bostonteapartyship.com/",
+        "map": "Boston Tea Party Ships and Museum 306 Congress St Boston",
+        "bodyHtml": "A cool one that isn't an art museum — and it's basically in your backyard. On <b>Fort Point Channel</b>, a 10-minute walk from the hotel (right by the Barking Crab), it's a live, immersive hour: costumed reenactors, restored tall ships, and yes — you heave a crate of tea into the harbor yourself. Loud, hands-on, and very Boston. Tours run about an hour, 10am to 5pm.",
+        "chips": [
+          {
+            "type": "walk",
+            "label": "Walk · 10 min from the hotel"
+          }
+        ],
+        "tipHtml": "Buy timed tickets online to skip the booth line — tours leave on the hour and can sell out midday in summer.",
+        "verdictHtml": "<b>My take</b> · Easy yes if you want a museum — a one-hour, high-energy stop you can drop into <em>Sunday's open harbor block</em> or a rainy hour without cutting anything. Want something bigger? The free <b>USS Constitution Museum</b> in Charlestown pairs with a harbor ferry, and the <b>Museum of Science</b> is a half-day on its own."
+      },
       {
         "titleHtml": "Cambridge &amp; Harvard Square",
         "badge": {
