@@ -238,6 +238,19 @@ a.act:hover{background:rgba(127,212,221,.15);border-color:#7FD4DD}
 #nowbar .nb-title{font-weight:700;font-size:14.5px;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #nowbar .nb-next{font-size:12px;color:#AFC5CC;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #nowbar .nb-cta{flex:none;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#f0a58f}
+
+/* optional add-on section (e.g. Cambridge detour) */
+.optional{padding-top:40px}
+.optcard{margin-top:16px}
+.verdict{
+  margin-top:12px;border-left:3px solid var(--brass);background:rgba(150,118,58,.08);
+  padding:10px 13px;border-radius:0 4px 4px 0;font-size:14px;color:var(--ink-soft);line-height:1.5;
+}
+.verdict b{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--brass);
+}
+.verdict em{font-family:'Newsreader',serif;font-style:italic;color:var(--ink)}
 footer{
   margin-top:40px;text-align:center;font-family:'IBM Plex Mono',monospace;
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);

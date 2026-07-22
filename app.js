@@ -132,6 +132,34 @@ function renderPanel(c, listId) {
 </div>`;
 }
 
+// Optional add-on cards (e.g. a side trip), rendered as standalone cards with
+// an honest "my take" verdict. Not part of the day timeline or the live status.
+function renderOptional(opt) {
+  if (!opt || !opt.cards || !opt.cards.length) return '';
+  const cards = opt.cards.map(c => {
+    let h3 = c.titleHtml;
+    if (c.badge) h3 += ` <span class="badge${c.badge.res ? ' res' : ''}">${c.badge.text}</span>`;
+    if (c.web) h3 += ` <a class="webpin" href="${attr(c.web)}" target="_blank" rel="noopener">SITE</a>`;
+    if (c.map) {
+      const href = 'https://maps.apple.com/?q=' + encodeURIComponent(c.map);
+      h3 += ` <a class="mappin" href="${attr(href)}" target="_blank" rel="noopener">MAP</a>`;
+    }
+    let inner = `<p>${c.bodyHtml}</p>`;
+    const chips = (c.chips || []).map(x => `<span class="chip ${attr(x.type)}">${x.label}</span>`).join('');
+    if (chips) inner += `\n        <div class="chips">${chips}</div>`;
+    if (c.tipHtml) inner += `\n        <p class="tip">${c.tipHtml}</p>`;
+    if (c.verdictHtml) inner += `\n        <div class="verdict">${c.verdictHtml}</div>`;
+    return `<div class="card optcard"><h3>${h3}</h3>\n        ${inner}</div>`;
+  }).join('\n\n    ');
+  return `<section class="optional">
+  <div class="dayhead">
+    <h2>${opt.heading}</h2>
+    <p class="course">${opt.lede}</p>
+  </div>
+  ${cards}
+</section>`;
+}
+
 /* ---------- behaviour wiring ---------- */
 
 function activateDay(id) {
@@ -391,6 +419,7 @@ async function main() {
     renderHeader(trip.header),
     renderNav(trip.days),
     ...trip.days.map((d, i) => renderDay(d, i, trip.base)),
+    trip.optional ? renderOptional(trip.optional) : '',
     renderPanel(trip.checklist, 'todo'),
     trip.packing ? renderPanel(trip.packing, 'packlist') : '',
     trip.photos ? renderPanel(trip.photos, 'photolist') : '',

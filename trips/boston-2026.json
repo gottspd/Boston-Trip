@@ -280,20 +280,20 @@
         {
           "time": "6:30",
           "meal": true,
-          "titleHtml": "Dinner: Barcelona Wine Bar, South End",
+          "titleHtml": "Dinner: Toro, South End",
           "badge": {
             "text": "Reserve now",
             "res": true
           },
-          "bodyHtml": "Matt Kelleher's tapas call. Order in waves: patatas bravas, gambas al ajillo, the char grilled steak skewers. The South End is where Boston actually eats; the whole neighborhood backs him up.",
+          "bodyHtml": "Allie's swap — you've already got a Barcelona near home, so go for the Boston original. <b>Toro</b> is Ken Oringer's Spanish tapas room in the South End: order in waves. The <b>maíz asado</b> — grilled corn with lime, aioli, and aged cheese — is the one nobody skips, then patatas bravas, gambas al ajillo, and jamón. Loud, buzzy, and exactly her speed.",
           "chips": [
             {
               "type": "walk",
               "label": "Rideshare · 10 min from Seaport, or Long Wharf"
             }
           ],
-          "map": "Barcelona Wine Bar 525 Tremont St Boston",
-          "web": "https://barcelonawinebar.com/location/south-end/"
+          "map": "Toro 1704 Washington St Boston",
+          "web": "https://www.toro-restaurant.com/"
         },
         {
           "time": "8:15",
@@ -306,7 +306,7 @@
           "chips": [
             {
               "type": "walk",
-              "label": "Walk · 15 min through the South End"
+              "label": "Walk · 20 min, or a short rideshare"
             }
           ],
           "tipHtml": "On the walk over, cut past the <a class=\"loc\" href=\"https://maps.apple.com/?q=Christian%20Science%20Plaza%20Boston\" target=\"_blank\" rel=\"noopener\">Christian Science Plaza</a> reflecting pool. At dusk it mirrors the whole skyline.",
@@ -434,7 +434,7 @@
     "items": [
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Duck%20Tours%20Prudential%20Center\" target=\"_blank\" rel=\"noopener\">Duck Tour</a>, Sunday 10:30 AM</b> · Prudential departure, 2 seats. Grab it before it goes too. <a class=\"act\" href=\"https://bostonducktours.com/on-sale/\" target=\"_blank\" rel=\"noopener\">Book tickets ›</a>",
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=View%20Boston%20800%20Boylston%20St\" target=\"_blank\" rel=\"noopener\">View Boston</a>, Saturday ~8:00 PM</b> · timed sunset tickets for 2. <a class=\"act\" href=\"https://viewboston.com/buy-tickets/\" target=\"_blank\" rel=\"noopener\">Book tickets ›</a>",
-      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Barcelona%20Wine%20Bar%20525%20Tremont%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Barcelona Wine Bar</a> South End, Saturday 6:30 PM</b> · table for 2. <a class=\"act\" href=\"https://barcelonawinebar.com/reservations/\" target=\"_blank\" rel=\"noopener\">Reserve ›</a> <a class=\"act\" href=\"tel:+16172662600\">Call</a>",
+      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Toro%201704%20Washington%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Toro</a> South End, Saturday 6:30 PM</b> · table for 2. <a class=\"act\" href=\"https://www.toro-restaurant.com/reservations\" target=\"_blank\" rel=\"noopener\">Reserve ›</a> <a class=\"act\" href=\"tel:+16175364300\">Call</a>",
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Tony%20and%20Elaine%27s%20111%20N%20Washington%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Tony &amp; Elaine's</a>, Friday 6:45 PM</b> · ask for outdoor seating. <a class=\"act\" href=\"https://www.tonyandelaines.com/reservations\" target=\"_blank\" rel=\"noopener\">Reserve ›</a> <a class=\"act\" href=\"tel:+16175800321\">Call</a>",
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Harbor%20Islands%20Ferry%20Long%20Wharf%20Boston\" target=\"_blank\" rel=\"noopener\">Harbor Islands ferry</a>, Saturday afternoon</b> · round trip to Georges Island, or swap to a whale watch and book that instead. <a class=\"act\" href=\"https://www.bostonharborislands.org/ferry-tickets/\" target=\"_blank\" rel=\"noopener\">Ferry tickets ›</a>",
       "<b>Water taxi on demand</b> · Boston Harbor water taxis run on call when you land. <a class=\"act\" href=\"tel:+16174068584\">Call 617-406-8584</a> <a class=\"act\" href=\"https://www.bostonwatertaxi.com/\" target=\"_blank\" rel=\"noopener\">Get the app ›</a>"
@@ -472,6 +472,33 @@
       "The Make Way for Ducklings statues",
       "A lobster roll, caught before it disappears",
       "Golden hour on the Harborwalk — dad + daughter"
+    ]
+  },
+  "optional": {
+    "heading": "Optional detour · Cambridge",
+    "lede": "One extra idea, with my honest take on whether to bother.",
+    "cards": [
+      {
+        "titleHtml": "Cambridge &amp; Harvard Square",
+        "badge": {
+          "text": "Optional"
+        },
+        "web": "https://www.harvard.edu/visit",
+        "map": "Harvard Yard Cambridge MA",
+        "bodyHtml": "The easy version of a Boston classic: take the <b>Red Line</b> from Park Street or South Station straight to <b>Harvard</b> (about 20 minutes). Walk into <a class=\"loc\" href=\"https://maps.apple.com/?q=Harvard%20Yard%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Harvard Yard</a>, rub the toe of the <b>John Harvard statue</b> for the photo, then duck into the <a class=\"loc\" href=\"https://maps.apple.com/?q=Harvard%20Coop%201400%20Massachusetts%20Ave%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Harvard Coop</a><a class=\"pin\" href=\"https://www.thecoop.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for a crimson hoodie. Wander <b>Harvard Square</b> — bookstores, buskers, and cafés — and grab burgers at the gloriously dorm-room-y <a class=\"loc\" href=\"https://maps.apple.com/?q=Mr%20Bartley%27s%20Burger%20Cottage%201246%20Massachusetts%20Ave%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Mr. Bartley's</a><a class=\"pin\" href=\"https://www.mrbartley.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>, right across from the Yard. Time permitting, stroll to the <b>Charles River</b>. Red Line back — budget 3 to 4 hours door to door.",
+        "chips": [
+          {
+            "type": "red",
+            "label": "Red Line · Park St to Harvard, about 20 min"
+          },
+          {
+            "type": "walk",
+            "label": "Walk · the Square is compact"
+          }
+        ],
+        "tipHtml": "The free student-led Harvard Yard tour is genuinely good but needs advance sign-up and caps at five people — otherwise grab Harvard's free self-guided-tour app and go at your own pace.",
+        "verdictHtml": "<b>My take</b> · Worth it as a <em>swap</em>, not an add-on — this weekend is already full. If Allie's curious about the college-town vibe, or Saturday's harbor-islands weather turns, trade the Georges Island ferry for this. Otherwise I'd keep the harbor; it's the soul of the trip."
+      }
     ]
   }
 }
