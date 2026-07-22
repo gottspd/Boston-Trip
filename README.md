@@ -9,7 +9,7 @@ The first trip is **Boston, Plotted** — a daddy-daughter weekend, Jul 24–26 
 
 ## Live site
 
-Deployed via GitHub Pages: **https://gottspd.github.io/boston-trip/**
+Deployed via GitHub Pages: **https://gottspd.github.io/Boston-Trip/**
 
 ## How it works
 
@@ -33,7 +33,7 @@ original hand-written page used, so the design is identical.
 1. Copy `trips/boston-2026.json` to `trips/<your-slug>.json` and edit the
    content (city, dates, flights, stops, restaurants, transit, checklist).
 2. Open it with `?trip=<your-slug>` — e.g.
-   `https://gottspd.github.io/boston-trip/?trip=lisbon-2027`.
+   `https://gottspd.github.io/Boston-Trip/?trip=lisbon-2027`.
 3. To make it the default trip served at the root URL, set `DEFAULT_TRIP` at the
    top of `app.js` and add the new file to the `sw.js` precache list.
 
