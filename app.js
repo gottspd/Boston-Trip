@@ -52,6 +52,9 @@ function renderLeg(leg) {
   if (leg.badge) {
     h3 += ` <span class="badge${leg.badge.res ? ' res' : ''}">${leg.badge.text}</span>`;
   }
+  if (leg.web) {
+    h3 += ` <a class="webpin" href="${attr(leg.web)}" target="_blank" rel="noopener">SITE</a>`;
+  }
   if (leg.map) {
     const href = 'https://maps.apple.com/?q=' + encodeURIComponent(leg.map);
     h3 += ` <a class="mappin" href="${attr(href)}" target="_blank" rel="noopener">MAP</a>`;

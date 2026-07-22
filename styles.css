@@ -185,6 +185,20 @@ a.loc:hover{border-bottom-color:var(--ferry);background:rgba(29,122,133,.09)}
 .panel a.loc{color:#7FD4DD;border-bottom-color:rgba(127,212,221,.45)}
 .panel a.loc:hover{background:rgba(127,212,221,.12);border-bottom-color:#7FD4DD}
 .panel a.loc b{color:#7FD4DD}
+
+/* website links — brass, to sit "in addition" to the teal map links */
+a.webpin{
+  font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;letter-spacing:.08em;
+  color:var(--brass);text-decoration:none;border:1px solid var(--brass);border-radius:20px;
+  padding:2px 9px;white-space:nowrap;
+}
+a.webpin:hover{background:var(--brass);color:#fff}
+a.pin{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--brass);text-decoration:none;
+  vertical-align:super;margin-left:2px;
+}
+a.pin:hover{text-decoration:underline}
 footer{
   margin-top:40px;text-align:center;font-family:'IBM Plex Mono',monospace;
   font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
