@@ -41,7 +41,7 @@
         "subHtml": "Harbor + North End"
       },
       "heading": "Day 1 · Friday, July 24",
-      "course": "Arrive by air, enter by sea. Seaport, the Greenway, and dinner in the North End.",
+      "course": "Land, cross the harbor, and settle into the Seaport. Downtown, the Greenway, and dinner in the North End.",
       "date": "2026-07-24",
       "legs": [
         {
@@ -58,7 +58,7 @@
               "label": "Shuttle + water taxi + walk · about 35 min, no bag wait"
             }
           ],
-          "tipHtml": "This is the trip's opening shot. Allie's first view of Boston should be from the water.",
+          "tipHtml": "Allie's first view of Boston is from the water.",
           "swap": {
             "label": "Bad weather backup",
             "bodyHtml": "Silver Line SL1 bus, curbside at every terminal's arrivals level, free heading into the city, every 10 min. Ride it through the harbor tunnel to the first stop, <a class=\"loc\" href=\"https://maps.apple.com/?q=Silver%20Line%20Way%20Station%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Silver Line Way</b></a>, then walk 5 min to the hotel."
@@ -67,7 +67,7 @@
         {
           "time": "11:15",
           "titleHtml": "Drop bags at Hyatt Place Seaport",
-          "bodyHtml": "Room likely won't be ready. They'll hold luggage. Change into walking shoes; you'll log 15k steps today without trying.",
+          "bodyHtml": "Room likely won't be ready, but they'll hold your luggage. Change into walking shoes — it's a lot of walking today.",
           "map": "Hyatt Place Boston Seaport District",
           "web": "https://www.hyatt.com/hyatt-place/en-US/boszs-hyatt-place-boston-seaport-district"
         },
@@ -78,7 +78,7 @@
           "badge": {
             "text": "Meal"
           },
-          "bodyHtml": "Bill Barrett's pick, and it's a five minute walk on Fort Point Channel. Picnic tables under the tent, crab legs, lobster roll, and the chowdah Song ordered you to get. Loud, casual, very Boston.",
+          "bodyHtml": "Bill Barrett's pick, a five-minute walk on Fort Point Channel. Picnic tables under the tent — crab legs, lobster roll, and the chowder Song recommended. Casual and loud.",
           "chips": [
             {
               "type": "walk",
@@ -95,7 +95,7 @@
         {
           "time": "1:15",
           "titleHtml": "Harborwalk into downtown",
-          "bodyHtml": "Cross the Seaport Boulevard bridge and follow the Harborwalk north along the water past the <a class=\"loc\" href=\"https://maps.apple.com/?q=New%20England%20Aquarium%20Boston\" target=\"_blank\" rel=\"noopener\">aquarium</a><a class=\"pin\" href=\"https://www.neaq.org/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> to <a class=\"loc\" href=\"https://maps.apple.com/?q=Long%20Wharf%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Long Wharf</b></a>. Jeff Behrens is right: the harbor is the show. Great photo stops the whole way.",
+          "bodyHtml": "Cross the Seaport Boulevard bridge and follow the Harborwalk north along the water past the <a class=\"loc\" href=\"https://maps.apple.com/?q=New%20England%20Aquarium%20Boston\" target=\"_blank\" rel=\"noopener\">aquarium</a><a class=\"pin\" href=\"https://www.neaq.org/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> to <a class=\"loc\" href=\"https://maps.apple.com/?q=Long%20Wharf%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Long Wharf</b></a>. Jeff Behrens's pick — it stays on the water, with good photo stops the whole way.",
           "chips": [
             {
               "type": "walk",
@@ -106,27 +106,27 @@
         {
           "time": "2:00",
           "titleHtml": "Faneuil Hall + Quincy Market, quick pass",
-          "bodyHtml": "Todd's pick. Street performers, the long market hall, grab a drink. It's touristy, so treat it as a 45 minute walk-through, not a destination.",
+          "bodyHtml": "Todd's pick. Street performers and the long market hall; grab a drink. It's touristy, so keep it to a 45-minute walk-through.",
           "map": "Quincy Market Boston",
           "web": "https://faneuilhallmarketplace.com/"
         },
         {
           "time": "3:00",
           "titleHtml": "Rose Kennedy Greenway to the North End",
-          "bodyHtml": "Wander the Greenway's gardens and public art north, then dive into the North End's narrow streets. Hanover and Salem Streets are the spine; the side streets are the charm. This is the original Boston, now the Italian quarter.",
+          "bodyHtml": "Walk north through the Greenway's gardens and public art, then into the North End's narrow streets. Hanover and Salem Streets are the main ones; the side streets are quieter. It's the old Italian neighborhood.",
           "chips": [
             {
               "type": "walk",
               "label": "Walk · 10 min on the Greenway"
             }
           ],
-          "tipHtml": "Mid afternoon move: cannoli at <a class=\"loc\" href=\"https://maps.apple.com/?q=Modern%20Pastry%20257%20Hanover%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Modern Pastry</a><a class=\"pin\" href=\"https://modernpastry.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> on Hanover. Megan says Modern over <a class=\"loc\" href=\"https://maps.apple.com/?q=Mike%27s%20Pastry%20300%20Hanover%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Mike's</a><a class=\"pin\" href=\"https://www.mikespastry.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>, and she's correct. Cash speeds up the line.",
+          "tipHtml": "Cannoli at <a class=\"loc\" href=\"https://maps.apple.com/?q=Modern%20Pastry%20257%20Hanover%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Modern Pastry</a><a class=\"pin\" href=\"https://modernpastry.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> on Hanover. Megan prefers Modern over <a class=\"loc\" href=\"https://maps.apple.com/?q=Mike%27s%20Pastry%20300%20Hanover%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Mike's</a><a class=\"pin\" href=\"https://www.mikespastry.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>. Cash speeds up the line.",
           "map": "Modern Pastry 257 Hanover St Boston"
         },
         {
           "time": "4:30",
           "titleHtml": "Reset at the hotel",
-          "bodyHtml": "Check in for real, shower, put your feet up for an hour. Water taxi or a 20 minute walk back.",
+          "bodyHtml": "Check in, shower, and rest for an hour. Water taxi or a 20-minute walk back.",
           "chips": [
             {
               "type": "walk",
@@ -146,7 +146,7 @@
             "text": "Reserve now",
             "res": true
           },
-          "bodyHtml": "Megan's pick: red sauce Italian with a fun, slightly retro energy, and the outdoor tables she specifically flagged. Chicken parm and a Shirley Temple for the almost 21 year old.",
+          "bodyHtml": "Megan's pick: red-sauce Italian with outdoor tables she flagged. Chicken parm, and a Shirley Temple for Allie.",
           "chips": [
             {
               "type": "walk",
@@ -155,7 +155,7 @@
           ],
           "swap": {
             "label": "Swap",
-            "bodyHtml": "<a class=\"loc\" href=\"https://maps.apple.com/?q=Massimino%27s%20207%20Endicott%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Massiminos</a><a class=\"pin\" href=\"https://massiminosboston.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> on Endicott St, Rob Weinhold's pick, quieter and old school. Beth seconded it hard."
+            "bodyHtml": "<a class=\"loc\" href=\"https://maps.apple.com/?q=Massimino%27s%20207%20Endicott%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Massiminos</a><a class=\"pin\" href=\"https://massiminosboston.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> on Endicott St, Rob Weinhold's pick, quieter and old-school. Beth seconded it."
           },
           "map": "Tony and Elaine's 111 N Washington St Boston",
           "web": "https://www.tonyandelaines.com/"
@@ -163,7 +163,7 @@
         {
           "time": "8:30",
           "titleHtml": "Evening stroll: Christopher Columbus Park + waterfront lights",
-          "bodyHtml": "Walk off dinner under the trellis at the waterfront park, then follow the lit Harborwalk home. If you two still have gas, the adirondack swings at <a class=\"loc\" href=\"https://maps.apple.com/?q=The%20Lawn%20on%20D%20Boston\" target=\"_blank\" rel=\"noopener\"><b>The Lawn on D</b></a><a class=\"pin\" href=\"https://www.signatureboston.com/lawn-on-d\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> near the hotel glow at night and are exactly the kind of silly that ends a first day well.",
+          "bodyHtml": "Walk off dinner under the trellis at the waterfront park, then follow the lit Harborwalk home. If you're still up for it, the Adirondack swings at <a class=\"loc\" href=\"https://maps.apple.com/?q=The%20Lawn%20on%20D%20Boston\" target=\"_blank\" rel=\"noopener\"><b>The Lawn on D</b></a><a class=\"pin\" href=\"https://www.signatureboston.com/lawn-on-d\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> near the hotel are lit up at night.",
           "chips": [
             {
               "type": "walk",
@@ -181,7 +181,7 @@
         "subHtml": "Her day + the water"
       },
       "heading": "Day 2 · Saturday, July 25",
-      "course": "Beacon Hill and Back Bay for her, the harbor islands for both of you, tapas and a skyline to finish.",
+      "course": "Beacon Hill and Back Bay in the morning, the harbor islands in the afternoon, dinner and a skyline view to finish.",
       "date": "2026-07-25",
       "legs": [
         {
@@ -191,7 +191,7 @@
           "badge": {
             "text": "Meal"
           },
-          "bodyHtml": "Ride the T into town and start with shakshuka and a halva latte at the Charles Street Tatte. It puts you at the foot of Beacon Hill as the neighborhood wakes up.",
+          "bodyHtml": "Ride the T into town for shakshuka and a halva latte at the Charles Street Tatte. It's right at the foot of Beacon Hill.",
           "chips": [
             {
               "type": "sl",
@@ -208,7 +208,7 @@
         {
           "time": "9:45",
           "titleHtml": "Beacon Hill wander + Acorn Street",
-          "bodyHtml": "Gas lamps, brick sidewalks, hidden gardens. Hit <a class=\"loc\" href=\"https://maps.apple.com/?q=Acorn%20Street%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Acorn Street</b></a> early before the crowds; it's the most photographed street in America and Allie will want the shot. Beth called this one, and Jeffrey O'Neill seconded the neighborhood.",
+          "bodyHtml": "Gas lamps and brick sidewalks. Go to <a class=\"loc\" href=\"https://maps.apple.com/?q=Acorn%20Street%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Acorn Street</b></a> early, before the crowds — one of the most photographed streets in the country. Beth suggested it, and Jeffrey O'Neill seconded the neighborhood.",
           "chips": [
             {
               "type": "walk",
@@ -220,7 +220,7 @@
         {
           "time": "10:45",
           "titleHtml": "Public Garden + swan boats",
-          "bodyHtml": "Cross Charles Street into the <a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Public%20Garden\" target=\"_blank\" rel=\"noopener\">Public Garden</a>. The swan boats are $5, run since 1877, and are gloriously unhurried. Make Way for Ducklings statues on the way out.",
+          "bodyHtml": "Cross Charles Street into the <a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Public%20Garden\" target=\"_blank\" rel=\"noopener\">Public Garden</a>. The swan boats are about $5 and have run since 1877. The Make Way for Ducklings statues are on the way out.",
           "map": "Boston Public Garden",
           "web": "https://swanboats.com/"
         },
@@ -230,14 +230,14 @@
           "badge": {
             "text": "Allie's pick"
           },
-          "bodyHtml": "Sharon's daughter was obsessed with Back Bay and yours will be too. Eight blocks of shops from Arlington to Mass Ave. Your job is to carry bags and say yes. Beth warned you this won't be your favorite part of the trip; that's how you know it's working.",
+          "bodyHtml": "Sharon's daughter loved Back Bay; Allie probably will too. Eight blocks of shops from Arlington to Mass Ave — plan to browse. Beth flagged that it may not be your favorite part, but it's Allie's day.",
           "chips": [
             {
               "type": "walk",
               "label": "Walk · Newbury runs parallel to the Garden"
             }
           ],
-          "tipHtml": "Two minute detour at Copley: step into the <a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Public%20Library%20700%20Boylston%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Boston Public Library</a><a class=\"pin\" href=\"https://www.bpl.org/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> courtyard. It's free, it's stunning, and it's a library, not a museum, so it doesn't break your rules.",
+          "tipHtml": "Two-minute detour at Copley: the <a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Public%20Library%20700%20Boylston%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Boston Public Library</a><a class=\"pin\" href=\"https://www.bpl.org/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> courtyard — free and open to the public.",
           "map": "Newbury Street Boston"
         },
         {
@@ -247,7 +247,7 @@
           "badge": {
             "text": "Meal"
           },
-          "bodyHtml": "Keep it easy and outdoors: <a class=\"loc\" href=\"https://maps.apple.com/?q=Stephanie%27s%20on%20Newbury%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Stephanie's on Newbury</b></a><a class=\"pin\" href=\"https://www.stephaniesonnewbury.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for classic patio people watching, or <a class=\"loc\" href=\"https://maps.apple.com/?q=Faccia%20a%20Faccia%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Faccia a Faccia</b></a><a class=\"pin\" href=\"https://www.facciaafacciaboston.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> if you want a chicer room. Wherever she points.",
+          "bodyHtml": "Somewhere easy and outdoors: <a class=\"loc\" href=\"https://maps.apple.com/?q=Stephanie%27s%20on%20Newbury%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Stephanie's on Newbury</b></a><a class=\"pin\" href=\"https://www.stephaniesonnewbury.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for the patio, or <a class=\"loc\" href=\"https://maps.apple.com/?q=Faccia%20a%20Faccia%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Faccia a Faccia</b></a><a class=\"pin\" href=\"https://www.facciaafacciaboston.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for a nicer room. Allie's call.",
           "map": "Stephanie's on Newbury Boston",
           "web": "https://www.stephaniesonnewbury.com/"
         },
@@ -258,7 +258,7 @@
             "text": "Book ferry",
             "res": true
           },
-          "bodyHtml": "Robert Nagle's advice, taken: the harbor over the Freedom Trail. T back to Long Wharf and catch the harbor islands ferry out to <a class=\"loc\" href=\"https://maps.apple.com/?q=Georges%20Island%20Boston%20Harbor\" target=\"_blank\" rel=\"noopener\">Georges Island</a><a class=\"pin\" href=\"https://www.bostonharborislands.org/georges-island/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>. Explore <a class=\"loc\" href=\"https://maps.apple.com/?q=Fort%20Warren%20Georges%20Island%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Fort Warren</b></a><a class=\"pin\" href=\"https://www.bostonharborislands.org/georges-island/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>, a Civil War era granite fort with dark tunnels, ramparts, and skyline views back to the city. It reads as adventure, not history homework.",
+          "bodyHtml": "Robert Nagle's suggestion: the harbor over the Freedom Trail. Take the T back to Long Wharf and catch the harbor-islands ferry to <a class=\"loc\" href=\"https://maps.apple.com/?q=Georges%20Island%20Boston%20Harbor\" target=\"_blank\" rel=\"noopener\">Georges Island</a><a class=\"pin\" href=\"https://www.bostonharborislands.org/georges-island/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>. <a class=\"loc\" href=\"https://maps.apple.com/?q=Fort%20Warren%20Georges%20Island%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Fort Warren</b></a><a class=\"pin\" href=\"https://www.bostonharborislands.org/georges-island/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> is a Civil War–era granite fort with tunnels, ramparts, and skyline views back to the city.",
           "chips": [
             {
               "type": "red",
@@ -272,7 +272,7 @@
           "tipHtml": "Check the return schedule when you land on the island. Aim for a boat back around 5:00 to 5:30.",
           "swap": {
             "label": "Swap",
-            "bodyHtml": "A 2 to 3 hour afternoon whale watch from Long Wharf if you'd both rather chase humpbacks than forts. Books out on summer Saturdays, so decide by Thursday."
+            "bodyHtml": "A 2-to-3-hour afternoon whale watch from Long Wharf if you'd rather do that than the fort. It books out on summer Saturdays, so decide by Thursday."
           },
           "map": "Long Wharf Boston",
           "web": "https://www.bostonharborislands.org/georges-island/"
@@ -285,7 +285,7 @@
             "text": "Reserve now",
             "res": true
           },
-          "bodyHtml": "Allie's swap — you've already got a Barcelona near home, so go for the Boston original. <b>Toro</b> is Ken Oringer's Spanish tapas room in the South End: order in waves. The <b>maíz asado</b> — grilled corn with lime, aioli, and aged cheese — is the one nobody skips, then patatas bravas, gambas al ajillo, and jamón. Loud, buzzy, and exactly her speed.",
+          "bodyHtml": "Allie's swap — you already have a Barcelona near home, so go for the Boston original. Toro is Ken Oringer's Spanish tapas spot in the South End. Order a few things to share: the maíz asado (grilled corn with lime, aioli, and aged cheese), patatas bravas, gambas al ajillo, and jamón.",
           "chips": [
             {
               "type": "walk",
@@ -302,14 +302,14 @@
             "text": "Timed tickets",
             "res": true
           },
-          "bodyHtml": "Lien's bonus rec, deployed at the right hour. Walk 15 minutes from the South End to the <a class=\"loc\" href=\"https://maps.apple.com/?q=Prudential%20Center%20Boston\" target=\"_blank\" rel=\"noopener\">Prudential Tower</a><a class=\"pin\" href=\"https://www.prudentialcenter.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> and ride to the 52nd floor for sunset over the whole city, harbor to the Charles. Sunset is about 8:10; book the 8:00 window and stay for the lights coming up.",
+          "bodyHtml": "Lien's suggestion. It's about a 20-minute walk (or a quick rideshare) from the South End to the <a class=\"loc\" href=\"https://maps.apple.com/?q=Prudential%20Center%20Boston\" target=\"_blank\" rel=\"noopener\">Prudential Tower</a><a class=\"pin\" href=\"https://www.prudentialcenter.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>; ride to the 52nd floor for sunset, harbor to the Charles. Sunset is about 8:10, so book the 8:00 window.",
           "chips": [
             {
               "type": "walk",
               "label": "Walk · 20 min, or a short rideshare"
             }
           ],
-          "tipHtml": "On the walk over, cut past the <a class=\"loc\" href=\"https://maps.apple.com/?q=Christian%20Science%20Plaza%20Boston\" target=\"_blank\" rel=\"noopener\">Christian Science Plaza</a> reflecting pool. At dusk it mirrors the whole skyline.",
+          "tipHtml": "On the walk over, pass the <a class=\"loc\" href=\"https://maps.apple.com/?q=Christian%20Science%20Plaza%20Boston\" target=\"_blank\" rel=\"noopener\">Christian Science Plaza</a> reflecting pool — it mirrors the skyline at dusk.",
           "map": "View Boston 800 Boylston St",
           "web": "https://viewboston.com/"
         }
@@ -322,7 +322,7 @@
         "subHtml": "Ducks + wheels up"
       },
       "heading": "Day 3 · Sunday, July 26",
-      "course": "Quack loudly, dim sum, one last lap of the harbor, then an unhurried run at Logan.",
+      "course": "The Duck Tour, dim sum in Chinatown, a last lap of the harbor, then Logan.",
       "date": "2026-07-26",
       "legs": [
         {
@@ -332,7 +332,7 @@
           "badge": {
             "text": "Meal"
           },
-          "bodyHtml": "Joanne Chang's original. The sticky bun is famous for a reason; split one alongside real breakfast. Seven minute walk from the hotel, and you can check flight status over coffee.",
+          "bodyHtml": "Joanne Chang's original location. Split the well-known sticky bun and get real breakfast too. Seven-minute walk from the hotel.",
           "chips": [
             {
               "type": "walk",
@@ -349,7 +349,7 @@
             "text": "Booked · 10:30",
             "res": true
           },
-          "bodyHtml": "The single most repeated recommendation you got, from Jeffrey, Megan, and Adrian. It's a loop: departs from and returns to the <a class=\"loc\" href=\"https://maps.apple.com/?q=Prudential%20Center%20Huntington%20Ave%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Prudential Center (Huntington Ave side)</b></a><a class=\"pin\" href=\"https://www.prudentialcenter.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>, about 80 minutes through the city in a WWII style amphibious vehicle, including the moment it drives straight into the Charles River. Pure fun, zero museum content, and the conDUCKtor will absolutely make Allie quack at strangers. Back at the Pru just before noon.",
+          "bodyHtml": "Recommended by Jeffrey, Megan, and Adrian. It departs from and returns to the <a class=\"loc\" href=\"https://maps.apple.com/?q=Prudential%20Center%20Huntington%20Ave%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Prudential Center (Huntington Ave side)</b></a><a class=\"pin\" href=\"https://www.prudentialcenter.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> — about 80 minutes through the city in a WWII-style amphibious vehicle that drives straight into the Charles River. Expect some audience participation. Back at the Pru just before noon.",
           "chips": [
             {
               "type": "walk",
@@ -367,7 +367,7 @@
           "badge": {
             "text": "Meal"
           },
-          "bodyHtml": "Vaibhav vouched for Chinatown, and Sunday is its best day. Fifteen minute walk from the Duck Tour drop-off. <a class=\"loc\" href=\"https://maps.apple.com/?q=China%20Pearl%209%20Tyler%20St%20Boston\" target=\"_blank\" rel=\"noopener\"><b>China Pearl</b></a><a class=\"pin\" href=\"https://www.chinapearlrestaurants.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for classic rolling cart dim sum, pointing at whatever looks good, or <b>Gourmet Dumpling House</b> for soup dumplings. Bubble tea on the way out is mandatory for the 20 year old.",
+          "bodyHtml": "Vaibhav suggested Chinatown, and Sunday is the best day for dim sum. Fifteen-minute walk from the Duck Tour drop-off. <a class=\"loc\" href=\"https://maps.apple.com/?q=China%20Pearl%209%20Tyler%20St%20Boston\" target=\"_blank\" rel=\"noopener\"><b>China Pearl</b></a><a class=\"pin\" href=\"https://www.chinapearlrestaurants.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for cart dim sum, or <b>Gourmet Dumpling House</b> for soup dumplings. Grab bubble tea on the way out.",
           "chips": [
             {
               "type": "walk",
@@ -380,7 +380,7 @@
         {
           "time": "1:30",
           "titleHtml": "Greenway back, with an optional final cannoli",
-          "bodyHtml": "Exit through the <a class=\"loc\" href=\"https://maps.apple.com/?q=Chinatown%20Gate%20Boston\" target=\"_blank\" rel=\"noopener\">Chinatown Gate</a> onto the Rose Kennedy Greenway and stroll it north one last time: fountains, carousel, public art. If Friday's <a class=\"loc\" href=\"https://maps.apple.com/?q=Modern%20Pastry%20257%20Hanover%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Modern Pastry</a><a class=\"pin\" href=\"https://modernpastry.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> run left a mark, the North End is ten minutes further for a boxed half dozen to fly home with.",
+          "bodyHtml": "Exit through the <a class=\"loc\" href=\"https://maps.apple.com/?q=Chinatown%20Gate%20Boston\" target=\"_blank\" rel=\"noopener\">Chinatown Gate</a> onto the Rose Kennedy Greenway and walk north one last time — fountains, a carousel, public art. If Friday's <a class=\"loc\" href=\"https://maps.apple.com/?q=Modern%20Pastry%20257%20Hanover%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Modern Pastry</a><a class=\"pin\" href=\"https://modernpastry.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> was a hit, the North End is ten minutes further for a boxed half-dozen to take home.",
           "chips": [
             {
               "type": "walk",
@@ -393,7 +393,7 @@
         {
           "time": "2:45",
           "titleHtml": "Last hour on the harbor",
-          "bodyHtml": "Back to the Seaport for a slow lap of the Harborwalk at Fan Pier, the adirondack swings at <a class=\"loc\" href=\"https://maps.apple.com/?q=The%20Lawn%20on%20D%20Boston\" target=\"_blank\" rel=\"noopener\">The Lawn on D</a><a class=\"pin\" href=\"https://www.signatureboston.com/lawn-on-d\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>, or just a coffee facing the water. This is the deliberately empty block; whatever the weekend still owes you, collect it here.",
+          "bodyHtml": "Back to the Seaport for a slow lap of the Harborwalk at Fan Pier, the Adirondack swings at <a class=\"loc\" href=\"https://maps.apple.com/?q=The%20Lawn%20on%20D%20Boston\" target=\"_blank\" rel=\"noopener\">The Lawn on D</a><a class=\"pin\" href=\"https://www.signatureboston.com/lawn-on-d\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>, or a coffee by the water. This block is left open on purpose.",
           "chips": [
             {
               "type": "walk",
@@ -413,7 +413,7 @@
           "badge": {
             "text": "Buffer built in"
           },
-          "bodyHtml": "Reverse Friday: <b>(1)</b> 4:15, walk 6 minutes from the hotel to the <a class=\"loc\" href=\"https://maps.apple.com/?q=Fan%20Pier%20Boston\" target=\"_blank\" rel=\"noopener\">Fan Pier</a> dock; call the water taxi 15 minutes ahead so the boat is waiting. <b>(2)</b> Ten minute crossing to the <a class=\"loc\" href=\"https://maps.apple.com/?q=Logan%20Airport%20Ferry%20Dock%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Logan Boat Dock</b></a>. <b>(3)</b> Board the free Route 66 shuttle at the dock and hop off at the <a class=\"loc\" href=\"https://maps.apple.com/?q=Logan%20Airport%20Terminal%20B%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Terminal B</b></a> sign; carry-on only with mobile boarding passes, so walk straight past check-in to security. <b>(4)</b> You're at security around 4:50, a full 2.5 hours before <a class=\"loc\" href=\"https://www.flightaware.com/live/flight/UAL2136\" target=\"_blank\" rel=\"noopener\">UA2136</a>'s 7:24 departure. Since Logan is new territory, that's real cushion for security, with time left for a relaxed airside dinner.",
+          "bodyHtml": "Reverse Friday: <b>(1)</b> 4:15, walk 6 minutes from the hotel to the <a class=\"loc\" href=\"https://maps.apple.com/?q=Fan%20Pier%20Boston\" target=\"_blank\" rel=\"noopener\">Fan Pier</a> dock; call the water taxi 15 minutes ahead so the boat is waiting. <b>(2)</b> Ten minute crossing to the <a class=\"loc\" href=\"https://maps.apple.com/?q=Logan%20Airport%20Ferry%20Dock%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Logan Boat Dock</b></a>. <b>(3)</b> Board the free Route 66 shuttle at the dock and hop off at the <a class=\"loc\" href=\"https://maps.apple.com/?q=Logan%20Airport%20Terminal%20B%20Boston\" target=\"_blank\" rel=\"noopener\"><b>Terminal B</b></a> sign; carry-on only with mobile boarding passes, so walk straight past check-in to security. <b>(4)</b> You're at security around 4:50, a full 2.5 hours before <a class=\"loc\" href=\"https://www.flightaware.com/live/flight/UAL2136\" target=\"_blank\" rel=\"noopener\">UA2136</a>'s 7:24 departure. Since Logan is new to you, that's a comfortable cushion for security, with time for dinner after.",
           "chips": [
             {
               "type": "taxi",
@@ -439,7 +439,7 @@
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Harbor%20Islands%20Ferry%20Long%20Wharf%20Boston\" target=\"_blank\" rel=\"noopener\">Harbor Islands ferry</a>, Saturday afternoon</b> · round trip to Georges Island, or swap to a whale watch and book that instead. <a class=\"act\" href=\"https://www.bostonharborislands.org/ferry-tickets/\" target=\"_blank\" rel=\"noopener\">Ferry tickets ›</a>",
       "<b>Water taxi on demand</b> · Boston Harbor water taxis run on call when you land. <a class=\"act\" href=\"tel:+16174068584\">Call 617-406-8584</a> <a class=\"act\" href=\"https://www.bostonwatertaxi.com/\" target=\"_blank\" rel=\"noopener\">Get the app ›</a>"
     ],
-    "notes": "<b>Good to know:</b> Late July runs warm and humid; the harbor legs are the built in air conditioning. Allie is 20, so this plan keeps everything all ages: restaurants yes, bars no, which is why Tall Ship Boston didn't make the cut. Sunday is padded on purpose: at Logan by ~4:50 for a 7:24 flight, since it's your first time in that airport. Checkout is likely noon, so drop bags with the bell desk Sunday morning before the Duck Tour. Everything here is walk, boat, or one T ride, exactly as ordered."
+    "notes": "<b>Good to know:</b> Late July is warm and humid, so the harbor legs help. Allie is 20, so everything here is all-ages — restaurants, not bars. Sunday is padded on purpose: at Logan by ~4:50 for a 7:24 flight, since it's your first time there. Checkout is likely noon, so leave bags with the bell desk Sunday morning before the Duck Tour. Everything is walk, boat, or one T ride."
   },
   "footer": "Course plotted for M + A · Compiled from the Long Angle and Facebook fleet",
   "base": "Hyatt Place Boston Seaport District",
@@ -485,7 +485,7 @@
         },
         "web": "https://www.bostonteapartyship.com/",
         "map": "Boston Tea Party Ships and Museum 306 Congress St Boston",
-        "bodyHtml": "A cool one that isn't an art museum — and it's basically in your backyard. On <b>Fort Point Channel</b>, a 10-minute walk from the hotel (right by the Barking Crab), it's a live, immersive hour: costumed reenactors, restored tall ships, and yes — you heave a crate of tea into the harbor yourself. Loud, hands-on, and very Boston. Tours run about an hour, 10am to 5pm.",
+        "bodyHtml": "A non-art option close to the hotel, on Fort Point Channel — a 10-minute walk from the hotel, near the Barking Crab. It's a guided, hands-on hour: costumed reenactors, restored tall ships, and you throw a crate of tea into the harbor. Tours run about an hour, 10am to 5pm.",
         "chips": [
           {
             "type": "walk",
@@ -493,7 +493,7 @@
           }
         ],
         "tipHtml": "Buy timed tickets online to skip the booth line — tours leave on the hour and can sell out midday in summer.",
-        "verdictHtml": "<b>My take</b> · Easy yes if you want a museum — a one-hour, high-energy stop you can drop into <em>Sunday's open harbor block</em> or a rainy hour without cutting anything. Want something bigger? The free <b>USS Constitution Museum</b> in Charlestown pairs with a harbor ferry, and the <b>Museum of Science</b> is a half-day on its own."
+        "verdictHtml": "<b>My take</b> · A good fit if you want a museum — about an hour, and it slots into Sunday's open harbor block or a rainy stretch without cutting anything. For something bigger, the free USS Constitution Museum in Charlestown pairs with a harbor ferry, and the Museum of Science is a half-day on its own."
       },
       {
         "titleHtml": "Cambridge &amp; Harvard Square",
@@ -502,7 +502,7 @@
         },
         "web": "https://www.harvard.edu/visit",
         "map": "Harvard Yard Cambridge MA",
-        "bodyHtml": "The easy version of a Boston classic: take the <b>Red Line</b> from Park Street or South Station straight to <b>Harvard</b> (about 20 minutes). Walk into <a class=\"loc\" href=\"https://maps.apple.com/?q=Harvard%20Yard%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Harvard Yard</a>, rub the toe of the <b>John Harvard statue</b> for the photo, then duck into the <a class=\"loc\" href=\"https://maps.apple.com/?q=Harvard%20Coop%201400%20Massachusetts%20Ave%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Harvard Coop</a><a class=\"pin\" href=\"https://www.thecoop.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for a crimson hoodie. Wander <b>Harvard Square</b> — bookstores, buskers, and cafés — and grab burgers at the gloriously dorm-room-y <a class=\"loc\" href=\"https://maps.apple.com/?q=Mr%20Bartley%27s%20Burger%20Cottage%201246%20Massachusetts%20Ave%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Mr. Bartley's</a><a class=\"pin\" href=\"https://www.mrbartley.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>, right across from the Yard. Time permitting, stroll to the <b>Charles River</b>. Red Line back — budget 3 to 4 hours door to door.",
+        "bodyHtml": "Take the <b>Red Line</b> from Park Street or South Station straight to <b>Harvard</b> (about 20 minutes). Walk into <a class=\"loc\" href=\"https://maps.apple.com/?q=Harvard%20Yard%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Harvard Yard</a>, rub the toe of the <b>John Harvard statue</b> for the photo, then duck into the <a class=\"loc\" href=\"https://maps.apple.com/?q=Harvard%20Coop%201400%20Massachusetts%20Ave%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Harvard Coop</a><a class=\"pin\" href=\"https://www.thecoop.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for a crimson hoodie. Wander <b>Harvard Square</b> — bookstores, buskers, and cafés — and grab burgers at <a class=\"loc\" href=\"https://maps.apple.com/?q=Mr%20Bartley%27s%20Burger%20Cottage%201246%20Massachusetts%20Ave%20Cambridge%20MA\" target=\"_blank\" rel=\"noopener\">Mr. Bartley's</a><a class=\"pin\" href=\"https://www.mrbartley.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a>, right across from the Yard. Time permitting, stroll to the <b>Charles River</b>. Red Line back — budget 3 to 4 hours door to door.",
         "chips": [
           {
             "type": "red",
@@ -513,8 +513,8 @@
             "label": "Walk · the Square is compact"
           }
         ],
-        "tipHtml": "The free student-led Harvard Yard tour is genuinely good but needs advance sign-up and caps at five people — otherwise grab Harvard's free self-guided-tour app and go at your own pace.",
-        "verdictHtml": "<b>My take</b> · Worth it as a <em>swap</em>, not an add-on — this weekend is already full. If Allie's curious about the college-town vibe, or Saturday's harbor-islands weather turns, trade the Georges Island ferry for this. Otherwise I'd keep the harbor; it's the soul of the trip."
+        "tipHtml": "The free student-led Harvard Yard tour is good but needs advance sign-up and caps at five people — otherwise grab Harvard's free self-guided-tour app and go at your own pace.",
+        "verdictHtml": "<b>My take</b> · Better as a swap than an add-on — the weekend is already full. If Allie wants to see the campus, or Saturday's harbor-islands weather turns, trade the Georges Island ferry for this. Otherwise I'd keep the harbor."
       }
     ]
   },
