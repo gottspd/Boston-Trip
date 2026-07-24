@@ -5,7 +5,7 @@
    Bump CACHE_VERSION whenever any precached asset changes.
    ========================================================================= */
 
-const CACHE_VERSION = 'boston-2026-v10';
+const CACHE_VERSION = 'boston-2026-v11';
 const PRECACHE = 'precache-' + CACHE_VERSION;
 const RUNTIME  = 'runtime-'  + CACHE_VERSION;
 

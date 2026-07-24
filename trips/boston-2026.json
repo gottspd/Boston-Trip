@@ -126,11 +126,11 @@
         {
           "time": "4:30",
           "titleHtml": "Reset at the hotel",
-          "bodyHtml": "Check in, shower, and rest for an hour. Water taxi or a 20-minute walk back.",
+          "bodyHtml": "Check in, shower, and rest for an hour. Water taxi, or about a 30-minute walk back.",
           "chips": [
             {
               "type": "walk",
-              "label": "Walk · 20 min"
+              "label": "Walk · ~30 min"
             },
             {
               "type": "taxi",
@@ -262,14 +262,14 @@
           "chips": [
             {
               "type": "red",
-              "label": "Red + walk · Charles/MGH to Long Wharf area"
+              "label": "Green Line · Copley to Government Center, then 8-min walk to Long Wharf"
             },
             {
               "type": "ferry",
-              "label": "Harbor Islands ferry · 30 min crossing"
+              "label": "Harbor Islands ferry · ~45 min crossing"
             }
           ],
-          "tipHtml": "Check the return schedule when you land on the island. Aim for a boat back around 5:00 to 5:30.",
+          "tipHtml": "Outbound Georges Island boats are limited — roughly 10am, noon, and 2pm — so this is tight after a 1:00 lunch; confirm the 2026 schedule, and if it doesn't line up, the whale watch below has more departures. Check the return times when you land and aim for a boat back around 5:00 to 5:30.",
           "swap": {
             "label": "Swap",
             "bodyHtml": "A 2-to-3-hour afternoon whale watch from Long Wharf if you'd rather do that than the fort. It books out on summer Saturdays, so decide by Thursday."
@@ -289,7 +289,7 @@
           "chips": [
             {
               "type": "walk",
-              "label": "Rideshare · 10 min from Seaport, or Long Wharf"
+              "label": "Rideshare · ~15 min from Long Wharf"
             }
           ],
           "map": "Toro 1704 Washington St Boston",
@@ -367,11 +367,11 @@
           "badge": {
             "text": "Meal"
           },
-          "bodyHtml": "Vaibhav suggested Chinatown, and Sunday is the best day for dim sum. Fifteen-minute walk from the Duck Tour drop-off. <a class=\"loc\" href=\"https://maps.apple.com/?q=China%20Pearl%209%20Tyler%20St%20Boston\" target=\"_blank\" rel=\"noopener\"><b>China Pearl</b></a><a class=\"pin\" href=\"https://www.chinapearlrestaurants.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for cart dim sum, or <b>Gourmet Dumpling House</b> for soup dumplings. Grab bubble tea on the way out.",
+          "bodyHtml": "Vaibhav suggested Chinatown, and Sunday is the best day for dim sum. About a 20-minute walk from the Duck Tour drop-off, or a couple of Green Line stops. <a class=\"loc\" href=\"https://maps.apple.com/?q=China%20Pearl%209%20Tyler%20St%20Boston\" target=\"_blank\" rel=\"noopener\"><b>China Pearl</b></a><a class=\"pin\" href=\"https://www.chinapearlrestaurants.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> for cart dim sum, or <b>Gourmet Dumpling House</b> for soup dumplings. Grab bubble tea on the way out.",
           "chips": [
             {
               "type": "walk",
-              "label": "Walk · 15 min from Prudential"
+              "label": "Walk · ~20 min from Prudential"
             }
           ],
           "map": "China Pearl 9 Tyler St Boston",
@@ -397,7 +397,7 @@
           "chips": [
             {
               "type": "walk",
-              "label": "Walk · 20 min from North End, 25 from Chinatown"
+              "label": "Walk · ~30 min from North End, ~25 from Chinatown, or a water taxi"
             }
           ],
           "map": "Fan Pier Park Boston"
