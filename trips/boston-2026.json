@@ -125,49 +125,52 @@
         },
         {
           "time": "4:30",
-          "titleHtml": "Linger in the North End",
-          "bodyHtml": "You're already up here, so skip the trek back to the hotel. Grab an espresso and a cannoli or gelato, take a café table or a bench, and let the afternoon settle before dinner. <a class=\"loc\" href=\"https://maps.apple.com/?q=Caffe%20Vittoria%20290%20Hanover%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Caffe Vittoria</a> on Hanover is a classic place to sit. You'll check in properly tonight, on the walk back.",
+          "titleHtml": "Back to the Seaport, freshen up",
+          "bodyHtml": "Head back to the Seaport for the evening — a ~30-minute Harborwalk or a quick water taxi from Long Wharf. Check in, drop the cannoli, and change before dinner near the hotel.",
           "chips": [
             {
               "type": "walk",
-              "label": "Walk · you're already in the neighborhood"
+              "label": "Walk · ~30 min along the Harborwalk"
+            },
+            {
+              "type": "taxi",
+              "label": "Or water taxi from Long Wharf"
             }
-          ],
-          "map": "Caffe Vittoria 290 Hanover St Boston"
+          ]
         },
         {
           "time": "6:45",
           "meal": true,
-          "titleHtml": "Dinner: Tony &amp; Elaine's, North End",
+          "titleHtml": "Dinner: Row 34, Seaport",
           "badge": {
             "text": "Reserve now",
             "res": true
           },
-          "bodyHtml": "Megan's pick: red-sauce Italian with outdoor tables she flagged. Chicken parm, and a Shirley Temple for Allie.",
+          "bodyHtml": "Dinner near the hotel — about an 8-minute walk. Row 34 is a Seaport favorite for oysters and a raw bar, with lobster rolls, grilled fish, and a few non-seafood plates. Casual but a notch up from the crab shack. If the tables are booked, the raw bar takes walk-ins.",
           "chips": [
             {
               "type": "walk",
-              "label": "Walk or rideshare · 20 min / 8 min"
+              "label": "Walk · ~8 min from the hotel"
             }
           ],
           "swap": {
             "label": "Swap",
-            "bodyHtml": "<a class=\"loc\" href=\"https://maps.apple.com/?q=Massimino%27s%20207%20Endicott%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Massiminos</a><a class=\"pin\" href=\"https://massiminosboston.com/\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> on Endicott St, Rob Weinhold's pick, quieter and old-school. Beth seconded it."
+            "bodyHtml": "<a class=\"loc\" href=\"https://maps.apple.com/?q=Legal%20Harborside%20270%20Northern%20Ave%20Boston\" target=\"_blank\" rel=\"noopener\">Legal Harborside</a> is the Legal Sea Foods flagship right next to the hotel; <a class=\"loc\" href=\"https://maps.apple.com/?q=Committee%2050%20Northern%20Ave%20Boston\" target=\"_blank\" rel=\"noopener\">Committee</a> a few doors up does Greek meze for a change from seafood."
           },
-          "map": "Tony and Elaine's 111 N Washington St Boston",
-          "web": "https://www.tonyandelaines.com/"
+          "map": "Row 34 383 Congress St Boston",
+          "web": "https://www.row34.com/location/row34-seaport/"
         },
         {
           "time": "8:30",
-          "titleHtml": "Evening stroll: Christopher Columbus Park + waterfront lights",
-          "bodyHtml": "Walk off dinner under the trellis at the waterfront park, then follow the lit Harborwalk home. If you're still up for it, the Adirondack swings at <a class=\"loc\" href=\"https://maps.apple.com/?q=The%20Lawn%20on%20D%20Boston\" target=\"_blank\" rel=\"noopener\"><b>The Lawn on D</b></a><a class=\"pin\" href=\"https://www.signatureboston.com/lawn-on-d\" target=\"_blank\" rel=\"noopener\" aria-label=\"Website\">site</a> near the hotel are lit up at night.",
+          "titleHtml": "Evening stroll: Seaport waterfront",
+          "bodyHtml": "Walk off dinner along the Fan Pier Harborwalk by the hotel, skyline lit across the water. The Adirondack swings at <a class=\"loc\" href=\"https://maps.apple.com/?q=The%20Lawn%20on%20D%20Boston\" target=\"_blank\" rel=\"noopener\">The Lawn on D</a> are a short detour and glow at night.",
           "chips": [
             {
               "type": "walk",
-              "label": "Walk · 25 min back to Seaport"
+              "label": "Walk · right by the hotel"
             }
           ],
-          "map": "Christopher Columbus Waterfront Park Boston"
+          "map": "Fan Pier Park Boston"
         }
       ]
     },
@@ -432,7 +435,7 @@
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Duck%20Tours%20Prudential%20Center\" target=\"_blank\" rel=\"noopener\">Duck Tour</a>, Sunday 10:30 AM</b> · Prudential departure, 2 seats. Grab it before it goes too. <a class=\"act\" href=\"https://bostonducktours.com/on-sale/\" target=\"_blank\" rel=\"noopener\">Book tickets ›</a>",
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=View%20Boston%20800%20Boylston%20St\" target=\"_blank\" rel=\"noopener\">View Boston</a>, Saturday ~8:00 PM</b> · timed sunset tickets for 2. <a class=\"act\" href=\"https://viewboston.com/buy-tickets/\" target=\"_blank\" rel=\"noopener\">Book tickets ›</a>",
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Toro%201704%20Washington%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Toro</a> South End, Saturday 6:30 PM</b> · table for 2. <a class=\"act\" href=\"https://www.toro-restaurant.com/reservations\" target=\"_blank\" rel=\"noopener\">Reserve ›</a> <a class=\"act\" href=\"tel:+16175364300\">Call</a>",
-      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Tony%20and%20Elaine%27s%20111%20N%20Washington%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Tony &amp; Elaine's</a>, Friday 6:45 PM</b> · ask for outdoor seating. <a class=\"act\" href=\"https://www.tonyandelaines.com/reservations\" target=\"_blank\" rel=\"noopener\">Reserve ›</a> <a class=\"act\" href=\"tel:+16175800321\">Call</a>",
+      "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Row%2034%20383%20Congress%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Row 34</a> Seaport, Friday 6:45 PM</b> · book ahead, or grab a seat at the raw bar. <a class=\"act\" href=\"https://www.opentable.com/r/row-34-boston\" target=\"_blank\" rel=\"noopener\">Reserve ›</a> <a class=\"act\" href=\"tel:+16175535900\">Call</a>",
       "<b><a class=\"loc\" href=\"https://maps.apple.com/?q=Boston%20Harbor%20Islands%20Ferry%20Long%20Wharf%20Boston\" target=\"_blank\" rel=\"noopener\">Harbor Islands ferry</a>, Saturday afternoon</b> · round trip to Georges Island, or swap to a whale watch and book that instead. <a class=\"act\" href=\"https://www.bostonharborislands.org/ferry-tickets/\" target=\"_blank\" rel=\"noopener\">Ferry tickets ›</a>",
       "<b>Water taxi on demand</b> · Boston Harbor water taxis run on call when you land. <a class=\"act\" href=\"tel:+16174068584\">Call 617-406-8584</a> <a class=\"act\" href=\"https://www.bostonwatertaxi.com/\" target=\"_blank\" rel=\"noopener\">Get the app ›</a>"
     ],
@@ -452,7 +455,7 @@
       "Any meds, plus a few blister bandages — moleskin saves the trip",
       "IDs and a card or two; boarding passes saved on your phones",
       "A packable tote for Newbury St finds and a boxed half-dozen cannoli",
-      "One nicer outfit each for dinners (Tony &amp; Elaine's, Barcelona)"
+      "One slightly nicer outfit each for dinners out"
     ]
   },
   "photos": {
@@ -577,15 +580,15 @@
       },
       {
         "label": "Fri dinner",
-        "val": "Tony &amp; Elaine's · 6:45 PM",
+        "val": "Row 34 · 6:45 PM",
         "acts": [
           {
             "t": "Call",
-            "href": "tel:+16175800321"
+            "href": "tel:+16175535900"
           },
           {
             "t": "Reserve ›",
-            "href": "https://www.tonyandelaines.com/reservations"
+            "href": "https://www.opentable.com/r/row-34-boston"
           }
         ]
       },
