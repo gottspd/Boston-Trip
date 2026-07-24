@@ -125,18 +125,15 @@
         },
         {
           "time": "4:30",
-          "titleHtml": "Reset at the hotel",
-          "bodyHtml": "Check in, shower, and rest for an hour. Water taxi, or about a 30-minute walk back.",
+          "titleHtml": "Linger in the North End",
+          "bodyHtml": "You're already up here, so skip the trek back to the hotel. Grab an espresso and a cannoli or gelato, take a café table or a bench, and let the afternoon settle before dinner. <a class=\"loc\" href=\"https://maps.apple.com/?q=Caffe%20Vittoria%20290%20Hanover%20St%20Boston\" target=\"_blank\" rel=\"noopener\">Caffe Vittoria</a> on Hanover is a classic place to sit. You'll check in properly tonight, on the walk back.",
           "chips": [
             {
               "type": "walk",
-              "label": "Walk · ~30 min"
-            },
-            {
-              "type": "taxi",
-              "label": "Or water taxi from Long Wharf"
+              "label": "Walk · you're already in the neighborhood"
             }
-          ]
+          ],
+          "map": "Caffe Vittoria 290 Hanover St Boston"
         },
         {
           "time": "6:45",
